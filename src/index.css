@@ -103,7 +103,7 @@
   font-size: clamp(10px, 1.7vmax, 48px);
   text-wrap: nowrap;
 }
-
+/*- best seller-*/
 /*-**************/
 /*   Products   */
 /*-**************/
@@ -129,6 +129,36 @@
 
 @media only screen and (min-width: 768px) {
   .swiper-best-seller > .swiper-pagination {
+    display: none;
+  }
+}
+/*-***************/
+/*- new product -*/
+/*-***************/
+/* .swiper-new-product  */
+.swiper-new-product .swiper-pagination {
+  height: max-content;
+  margin-top: 2rem;
+}
+.swiper-new-product .swiper-pagination .swiper-pagination-bullet {
+  background: #cbcbcb;
+}
+.swiper-pagination-bullet-active {
+  background-color: #a10550 !important;
+}
+.new-product-title {
+  font-size: clamp(20px, 1.2vmax, 48px);
+}
+.new-product-banner-title {
+  font-size: clamp(20px, 1.1vmax, 48px);
+  font-weight: bold;
+}
+.new-product-banner-text {
+  font-size: clamp(16px, 1vmax, 48px);
+  font-weight: 200;
+}
+@media only screen and (min-width: 768px) {
+  .swiper-new-product .swiper-pagination {
     display: none;
   }
 }

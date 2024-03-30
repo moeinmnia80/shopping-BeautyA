@@ -39,7 +39,6 @@ const BestSellerProduucts: FC = () => {
               ref={navigationPrevRef}
             />
             <Swiper
-              slidesPerView={4}
               spaceBetween={15}
               loop={true}
               pagination={{

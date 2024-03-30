@@ -14,3 +14,18 @@ export const GET_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_NEW_PRODUCTS = gql`
+  query {
+    newProducts {
+      title
+      description
+      price
+      slug
+      date
+      productcImage {
+        url
+      }
+    }
+  }
+`;
