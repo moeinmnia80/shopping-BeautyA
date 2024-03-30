@@ -1,22 +1,24 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter } from "react-router-dom";
-import defaultOptions from "@configs/reactQuery";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
 import Layout from "@layouts/Layout";
 import Router from "@router/Router";
 
+const client = new ApolloClient({
+  uri: import.meta.env.VITE_GRAPHCMS_URI,
+  cache: new InMemoryCache(),
+});
+
 function App() {
-  const queryClient = new QueryClient({ defaultOptions });
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <ApolloProvider client={client}>
           <Layout>
             <Router />
           </Layout>
-        </BrowserRouter>
-        {/* <ReactQueryDevtools /> */}
-      </QueryClientProvider>
+        </ApolloProvider>
+      </BrowserRouter>
     </>
   );
 }

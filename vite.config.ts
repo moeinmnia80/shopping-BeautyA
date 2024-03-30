@@ -11,6 +11,7 @@ export default defineConfig({
       "@ui": path.resolve(__dirname, "./src/components/ui"),
       "@configs": path.resolve(__dirname, "./src/configs"),
       "@constants": path.resolve(__dirname, "./src/constants"),
+      "@graphql": path.resolve(__dirname, "./src/graphql"),
       "@layouts": path.resolve(__dirname, "./src/layouts"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@router": path.resolve(__dirname, "./src/router"),

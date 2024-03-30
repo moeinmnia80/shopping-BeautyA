@@ -35,7 +35,7 @@ const Banner: FC = () => {
             prevEl: navigationPrevRef.current,
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper sm:h-full"
+          className="mySwiper h-[70dvh] sm:h-full"
         >
           <span
             className="swiper-button-prev absolute top-0 left-0 hidden lg:flex h-[calc(100%-4rem)] w-20 bg-[#00000066] z-20"

@@ -23,7 +23,7 @@ const FirstSkinTypeBanner = () => {
             Or
           </p>
           <div className="flex gap-x-4 w-full">
-            <button className="w-1/2 lg:w-max text-primary-500 lg:text-white skin-type-button-text lg:capitalize lg:border-2 lg:border-white lg:px-8 py-2">
+            <button className="w-1/2 lg:w-max text-primary-500 lg:text-white skin-type-button-text lg:text-[1vmax] lg:capitalize lg:border-2 lg:border-white lg:px-8 py-2">
               answer a few questions
             </button>
             <button className="w-1/2 lg:hidden text-white skin-type-button-text lg:capitalize bg-primary-500 lg:px-8 py-2">

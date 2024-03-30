@@ -26,6 +26,7 @@
       "@ui/*": ["src/components/ui/*"],
       "@configs/*": ["src/configs/*"],
       "@constants/*": ["src/constants/*"],
+      "@graphql/*": ["src/graphql/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
