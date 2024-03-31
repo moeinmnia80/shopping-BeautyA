@@ -1,4 +1,4 @@
-import ValueProposition from "@components/ui/ValueProposition";
+import ValueProposition from "@components/ui/SuggestedValues";
 
 const Footer = () => {
   return (

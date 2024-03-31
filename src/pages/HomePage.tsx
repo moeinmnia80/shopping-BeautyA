@@ -1,17 +1,19 @@
-import Banner from "@components/Banner";
-import BestSellerProduucts from "@components/BestSellerProduucts";
-import Categories from "@components/Categories";
-import FirstSkinTypeBanner from "@components/FirstSkinTypeBanner";
+import Banner from "@components/ui/Banner";
 import NewProducts from "@components/ui/NewProducts";
+import SpecialOffers from "@components/ui/SpecialOffers";
+import SkincareAnalysis from "@components/ui/SkincareAnalysis";
+import BestSellerProduucts from "@components/ui/BestSellerProduucts";
+import ProductsCategories from "@components/ui/ProductsCategories";
 
 const HomePage = () => {
   return (
     <>
       <Banner />
-      <Categories />
-      <FirstSkinTypeBanner />
+      <ProductsCategories />
+      <SkincareAnalysis />
       <BestSellerProduucts />
       <NewProducts />
+      <SpecialOffers />
     </>
   );
 };

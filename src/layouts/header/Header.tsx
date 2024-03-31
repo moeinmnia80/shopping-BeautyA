@@ -13,6 +13,7 @@ import HambergerMenuIcon from "@assets/icons/HambergerMenuIcon";
 const Header = () => {
   const [tab, setTab] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <section className="flex items-center justify-center w-full h-20 lg:h-24">

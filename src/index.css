@@ -138,7 +138,7 @@
 /* .swiper-new-product  */
 .swiper-new-product .swiper-pagination {
   height: max-content;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 .swiper-new-product .swiper-pagination .swiper-pagination-bullet {
   background: #cbcbcb;
@@ -147,7 +147,7 @@
   background-color: #a10550 !important;
 }
 .new-product-title {
-  font-size: clamp(20px, 1.2vmax, 48px);
+  font-size: clamp(20px, 1.5vmax, 48px);
 }
 .new-product-banner-title {
   font-size: clamp(20px, 1.1vmax, 48px);
@@ -161,4 +161,19 @@
   .swiper-new-product .swiper-pagination {
     display: none;
   }
+}
+/*-***************/
+/*-special offer-*/
+/*-***************/
+
+.special-offer__title {
+  font-size: clamp(20px, 1.2vmax, 48px);
+  font-weight: bold;
+}
+.special-offer__text {
+  font-size: clamp(20px, 1.7vmax, 48px);
+  font-weight: bold;
+}
+.special-offer__text-second {
+  font-size: clamp(14px, 0.9vmax, 48px);
 }
