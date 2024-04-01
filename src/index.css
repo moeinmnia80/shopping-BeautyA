@@ -177,3 +177,18 @@
 .special-offer__text-second {
   font-size: clamp(14px, 0.9vmax, 48px);
 }
+
+/*-***************/
+/*-  Our Brand  -*/
+/*-***************/
+
+.our-brand__title {
+  font-size: clamp(20px, 1.3vmax, 48px);
+  font-weight: bold;
+}
+.our-brand__text {
+  font-size: clamp(16px, 1vmax, 18px);
+}
+.our-brand__button {
+  font-size: clamp(14px, 1.1vmax, 18px);
+}
