@@ -58,17 +58,23 @@ const BestSellerProduucts: FC = () => {
               {data?.product?.map((product) => (
                 <SwiperSlide
                   key={`${product.slug}`}
-                  className={`flex flex-col items-center justify-between gap-y-5 w-full h-max  border-1 \
-                     border-Gray-DFDFDF p-5 cursor-pointer`}
+                  className={`flex flex-col w-full h-max  border-1 \
+                     border-Gray-DFDFDF cursor-pointer`}
                 >
-                  <img src={`${product.productcImage.url}`} alt="" />
-                  <h4 className="best-seller-product__title text-primary-500 font-bold">
-                    {product.title}
-                  </h4>
-                  <p className="best-seller-product__text">
-                    {product.description}
-                  </p>
-                  <p className=" self-start">${product.price}</p>
+                  <img
+                    src={`${product.productcImage.url}`}
+                    alt="product"
+                    className="w-full"
+                  />
+                  <div className="flex flex-col gap-y-5 bg-white p-5">
+                    <h4 className="best-seller-product__title text-primary-500 font-bold">
+                      {product.title}
+                    </h4>
+                    <p className="best-seller-product__text">
+                      {product.description}
+                    </p>
+                    <p className=" self-start">${product.price}</p>
+                  </div>
                 </SwiperSlide>
               ))}
             </SwiperWrapper>
