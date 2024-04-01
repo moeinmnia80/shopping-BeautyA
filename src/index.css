@@ -63,11 +63,11 @@
   content: none;
 }
 
-.banner-title {
+.banner__title {
   font-size: clamp(14px, 2.5vmax, 48px);
   text-wrap: nowrap;
 }
-.banner-button-text {
+.banner__button-text {
   font-size: clamp(12px, 0.8vmax, 48px);
 }
 
@@ -75,10 +75,10 @@
 /*  Categories  */
 /*-**************/
 
-.category-title {
+.product-category__title {
   font-size: clamp(20px, 1.5vmax, 48px);
 }
-.category-text {
+.product-category__text {
   font-size: clamp(8px, 1.1vmax, 48px);
   font-weight: 600;
 }
@@ -87,19 +87,19 @@
 /* skin-type part-1 */
 /*-******************/
 
-.skin-type {
+.skincare-analysis {
   font-size: clamp(20px, 2vmax, 48px);
 }
-.skin-type-title {
+.skincare-analysis__title {
   font-size: clamp(20px, 1.5vmax, 48px);
 }
-.skin-type-title__second {
+.skincare-analysis__title-second {
   font-size: clamp(16px, 1.2vmax, 48px);
 }
-.skin-type-text {
+.skincare-analysis__text {
   font-size: clamp(16px, 1vmax, 40px);
 }
-.skin-type-button-text {
+.skincare-analysis__button-text {
   font-size: clamp(10px, 1.7vmax, 48px);
   text-wrap: nowrap;
 }
@@ -108,10 +108,10 @@
 /*   Products   */
 /*-**************/
 
-.product-title {
+.best-seller-product__title {
   font-size: clamp(16px, 1.2vmax, 48px);
 }
-.product-text {
+.best-seller-product__text {
   font-size: clamp(12px, 0.8vmax, 48px);
 }
 .left-arrow {
@@ -146,14 +146,14 @@
 .swiper-pagination-bullet-active {
   background-color: #a10550 !important;
 }
-.new-product-title {
+.new-product__title {
   font-size: clamp(20px, 1.5vmax, 48px);
 }
-.new-product-banner-title {
+.new-product-banner__title {
   font-size: clamp(20px, 1.1vmax, 48px);
   font-weight: bold;
 }
-.new-product-banner-text {
+.new-product-banner__text {
   font-size: clamp(16px, 1vmax, 48px);
   font-weight: 200;
 }

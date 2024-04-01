@@ -62,10 +62,12 @@ const BestSellerProduucts: FC = () => {
                      border-Gray-DFDFDF p-5 cursor-pointer`}
                 >
                   <img src={`${product.productcImage.url}`} alt="" />
-                  <h4 className="product-title text-primary-500 font-bold">
+                  <h4 className="best-seller-product__title text-primary-500 font-bold">
                     {product.title}
                   </h4>
-                  <p className="product-text">{product.description}</p>
+                  <p className="best-seller-product__text">
+                    {product.description}
+                  </p>
                   <p className=" self-start">${product.price}</p>
                 </SwiperSlide>
               ))}
