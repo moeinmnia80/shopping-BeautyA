@@ -6,7 +6,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { GET_PRODUCTS } from "@graphql/queries";
 
 import "swiper/css/navigation";
-import SwiperWrapper from "./SwiperWrapper";
+import SwiperWrapper from "../SwiperWrapper";
 
 type Products = {
   title: string;

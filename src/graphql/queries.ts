@@ -29,3 +29,19 @@ export const GET_NEW_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_BLOGS = gql`
+  query {
+    blogs(last: 3) {
+      image {
+        url
+      }
+      title
+      about
+      author
+      date
+      description
+      slug
+    }
+  }
+`;

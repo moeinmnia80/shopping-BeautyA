@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 import newInBanner from "@assets/images/newInBanner.png";
 import { GET_NEW_PRODUCTS } from "@graphql/queries";
-import SwiperWrapper from "./SwiperWrapper";
+import SwiperWrapper from "../SwiperWrapper";
 
 type NewProducts = {
   title: string;
@@ -60,26 +60,24 @@ const NewProducts: FC = () => {
               </p>
             </SwiperSlide>
             {data?.newProducts?.map((product) => (
-              <>
-                <SwiperSlide
-                  key={`${product.slug}`}
-                  className={`flex flex-col items-start justify-between w-1/2 sm:w-full gap-y-5 md:w-1/3 xl:w-1/4 h-max \
+              <SwiperSlide
+                key={`${product.slug}`}
+                className={`flex flex-col items-start justify-between w-1/2 sm:w-full gap-y-5 md:w-1/3 xl:w-1/4 h-max \
                 bg-white border-1 border-Gray-DFDFDF cursor-pointer`}
-                >
-                  <img
-                    src={`${product.productcImage.url}`}
-                    alt=""
-                    className="w-full sm:w-full self-center"
-                  />
-                  <div className="flex flex-col gap-y-5 bg-white p-5">
-                    <h4 className="product-title text-primary-500 font-bold">
-                      {product.title}
-                    </h4>
-                    <p className="product-text">{product.description}</p>
-                    <p className=" self-start">${product.price}</p>
-                  </div>
-                </SwiperSlide>
-              </>
+              >
+                <img
+                  src={`${product.productcImage.url}`}
+                  alt=""
+                  className="w-full sm:w-full self-center"
+                />
+                <div className="flex flex-col gap-y-5 bg-white p-5">
+                  <h4 className="product-title text-primary-500 font-bold">
+                    {product.title}
+                  </h4>
+                  <p className="product-text">{product.description}</p>
+                  <p className=" self-start">${product.price}</p>
+                </div>
+              </SwiperSlide>
             ))}
           </SwiperWrapper>
         </div>

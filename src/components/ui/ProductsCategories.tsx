@@ -4,7 +4,7 @@ import { productsCategories } from "@constants/productsCategories";
 const Categories = () => {
   return (
     <>
-      <section className="lg:container flex flex-col items-center px-8 md:p-0 lg:mt-8">
+      <section className="lg:container flex flex-col items-center px-8 md:p-0 lg:mt-4">
         <h2 className="product-category__title font-bold">
           Products Categories
         </h2>

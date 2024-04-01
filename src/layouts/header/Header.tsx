@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { navMenuItems } from "@constants/navMenuItems";
 
-import SearchContainer from "@components/ui/SearchContainer";
+import SearchContainer from "@components/SearchContainer";
 
 import LanguageIcon from "@assets/icons/LanguageIcon";
 import SearchIcon from "@assets/icons/SearchIcon";

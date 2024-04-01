@@ -9,7 +9,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="bg-background">{children}</main>
+      <main className="bg-background pb-14">{children}</main>
       <Footer />
     </>
   );

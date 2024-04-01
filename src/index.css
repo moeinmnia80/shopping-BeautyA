@@ -183,7 +183,7 @@
 /*-***************/
 
 .our-brand__title {
-  font-size: clamp(20px, 1.3vmax, 48px);
+  font-size: clamp(20px, 1.5vmax, 48px);
   font-weight: bold;
 }
 .our-brand__text {
@@ -191,4 +191,42 @@
 }
 .our-brand__button {
   font-size: clamp(14px, 1.1vmax, 18px);
+}
+
+/*-***************/
+/*-   Our Blog  -*/
+/*-***************/
+@media only screen and (min-width: 768px) {
+  .our-blog-swiper .swiper-pagination {
+    display: none;
+  }
+}
+.our-blog__title {
+  font-size: clamp(20px, 1.5vmax, 48px);
+  font-weight: bold;
+}
+.our-blog-post__title {
+  font-size: clamp(18px, 1.1vmax, 48px);
+  font-weight: bold;
+}
+.our-blog-post__info {
+  font-size: clamp(8px, 0.7vmax, 14px);
+}
+.our-blog__button-text {
+  font-size: clamp(14px, 1.1vmax, 15px);
+}
+.truncate-overflow {
+  position: relative;
+  --max-lines: 2;
+  max-height: calc(1.4rem * var(--max-lines));
+  overflow: hidden;
+}
+.truncate-overflow::after {
+  content: "...";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2rem;
+  height: max-content;
+  background-color: white;
 }

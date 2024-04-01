@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const SearchContainer: FC<{ isOpen: boolean }> = ({ isOpen }) => {
-  return <>{console.log(isOpen)}</>;
+  return <>{isOpen}</>;
 };
 
 export default SearchContainer;

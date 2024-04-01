@@ -5,6 +5,7 @@ import SkincareAnalysis from "@components/ui/SkincareAnalysis";
 import BestSellerProduucts from "@components/ui/BestSellerProduucts";
 import ProductsCategories from "@components/ui/ProductsCategories";
 import OurBrand from "@components/ui/OurBrand";
+import OurBlogs from "@components/ui/OurBlogs";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <NewProducts />
       <SpecialOffers />
       <OurBrand />
+      <OurBlogs />
     </>
   );
 };
