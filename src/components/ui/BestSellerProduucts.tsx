@@ -39,7 +39,7 @@ const BestSellerProduucts: FC = () => {
 
   return (
     <>
-      <section className="lg:container relative flex flex-col items-center justify-center mt-12 px-8 sm:p-0">
+      <section className="lg:container relative flex flex-col items-center justify-center mt-14 px-8 sm:p-0">
         {!loading ? (
           <>
             <h2 className="text-2xl font-bold mb-6">our Best Sellers</h2>

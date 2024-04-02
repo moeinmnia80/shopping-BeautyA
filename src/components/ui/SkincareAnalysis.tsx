@@ -4,7 +4,7 @@ import barcode from "@assets/images/barcode.png";
 const FirstSkinTypeBanner = () => {
   return (
     <>
-      <section className="sm:container relative flex flex-wrap-reverse w-full h-max mt-20">
+      <section className="sm:container relative flex flex-wrap-reverse w-full h-max mt-14">
         <h3
           className={`absolute -top-10 left-1/2 -translate-x-1/2 lg:hidden \
            text-nowrap skincare-analysis text-black font-bold`}
