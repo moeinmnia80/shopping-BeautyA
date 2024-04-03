@@ -39,10 +39,12 @@ const BestSellerProduucts: FC = () => {
 
   return (
     <>
-      <section className="lg:container relative flex flex-col items-center justify-center mt-14 px-8 sm:p-0">
+      <section className="lg:container relative flex flex-col items-center justify-center mt-14 px-8">
         {!loading ? (
-          <>
-            <h2 className="text-2xl font-bold mb-6">our Best Sellers</h2>
+          <div className="relative w-full h-full">
+            <h2 className="text-center text-2xl font-bold mb-6">
+              our Best Sellers
+            </h2>
             <SwiperWrapper
               isOutSide={true}
               spaceBetween={15}
@@ -78,7 +80,7 @@ const BestSellerProduucts: FC = () => {
                 </SwiperSlide>
               ))}
             </SwiperWrapper>
-          </>
+          </div>
         ) : (
           <div>Loading...</div>
         )}

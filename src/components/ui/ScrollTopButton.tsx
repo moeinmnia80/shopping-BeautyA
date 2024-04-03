@@ -1,27 +1,29 @@
+import { useEffect, useState } from "react";
+
 import ArrowTopIcon from "@assets/icons/ArrowTopIcon";
-import { useEffect, useRef } from "react";
 
 const ScrollTopButton = () => {
-  const scrollTopButton = useRef<HTMLButtonElement | null>(null)!;
+  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
-    console.log(scrollTopButton.current?.style.display);
+    const checkScrollPosition = () => {
+      scrollY > 800 ? setIsShow(true) : setIsShow(false);
+    };
+    window.addEventListener("scroll", checkScrollPosition);
 
-    if (window.scrollY > 800) {
-      scrollTopButton.current!.style.display = "inline-block";
-    } else {
-      scrollTopButton.current!.style.display = "none";
-    }
+    return () => window.removeEventListener("scroll", checkScrollPosition);
   }, []);
 
   return (
     <>
-      <button
-        ref={scrollTopButton}
-        className="fixed bottom-5 right-5 hidden lg:inline-block border-2 bg-white border-primary-500 p-2"
-      >
-        <ArrowTopIcon style="w-7 h-7 text-primary-500" />
-      </button>
+      {isShow && (
+        <button
+          className="fixed bottom-20 right-5 hidden lg:inline-block border-2 bg-background border-primary-500 p-2 z-20"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <ArrowTopIcon style="w-7 h-7 text-primary-500" />
+        </button>
+      )}
     </>
   );
 };

@@ -7,6 +7,7 @@ import ProductsCategories from "@components/ui/ProductsCategories";
 import OurBrand from "@components/ui/OurBrand";
 import OurBlogs from "@components/ui/OurBlogs";
 import ScrollTopButton from "@components/ui/ScrollTopButton";
+import ChatBoxButton from "@components/ui/ChatBoxButton";
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <OurBrand />
       <OurBlogs />
       <ScrollTopButton />
+      <ChatBoxButton />
     </>
   );
 };

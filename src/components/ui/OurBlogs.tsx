@@ -39,7 +39,7 @@ const OurBlogs: FC = () => {
 
   return (
     <>
-      <section className="lg:container relative flex flex-col items-center justify-center px-8 md:px-0">
+      <section className="lg:container relative flex flex-col items-center justify-center px-8">
         <h3 className="our-blog__title">Our Blog</h3>
         <SwiperWrapper
           spaceBetween={15}
@@ -67,13 +67,15 @@ const OurBlogs: FC = () => {
                     {blog.about} | {blog.author} | {changeDate(blog.date)}
                   </p>
                 </div>
-                <p className="truncate-overflow">{blog.description}</p>
+                <p className="truncate-overflow our-blog__button-text">
+                  {blog.description}
+                </p>
               </div>
             </SwiperSlide>
           ))}
           {/* </ul> */}
         </SwiperWrapper>
-        <button className="md:absolute md:top-6 md:right-4 our-blog__button-text md:capitalize text-primary-500">
+        <button className="md:absolute md:top-6 md:right-12 our-blog__button-text md:capitalize text-primary-500 mt-4 md:mt-0">
           view all
         </button>
       </section>

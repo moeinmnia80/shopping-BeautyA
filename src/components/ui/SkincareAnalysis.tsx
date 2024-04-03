@@ -4,7 +4,7 @@ import barcode from "@assets/images/barcode.png";
 const FirstSkinTypeBanner = () => {
   return (
     <>
-      <section className="sm:container relative flex flex-wrap-reverse w-full h-max mt-14">
+      <section className="sm:container relative flex flex-wrap-reverse w-full h-max px-0 sm:px-8 mt-20 lg:mt-14">
         <h3
           className={`absolute -top-10 left-1/2 -translate-x-1/2 lg:hidden \
            text-nowrap skincare-analysis text-black font-bold`}
@@ -32,7 +32,7 @@ const FirstSkinTypeBanner = () => {
           <div className="flex gap-x-4 w-full">
             <button
               className={`w-1/2 lg:w-max text-primary-500 lg:text-white skincare-analysis__button-text \
-             lg:text-[1vmax] lg:capitalize lg:border-2 lg:border-white lg:px-8 py-21`}
+             lg:text-[1vmax] lg:capitalize lg:border-2 lg:border-white lg:px-8 py-2`}
             >
               answer a few questions
             </button>

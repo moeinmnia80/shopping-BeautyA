@@ -72,6 +72,7 @@ const SwiperWrapper: FC<
           <span className={nextButtonStyle} ref={navigationNextRef} />
         )}
       </Swiper>
+
       {isOutSide && (
         <span className={nextButtonStyle} ref={navigationNextRef} />
       )}

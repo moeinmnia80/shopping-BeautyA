@@ -17,8 +17,8 @@ const Banner: FC = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          prevButtonStyle={`swiper-button-prev absolute top-0 left-0 hidden lg:flex h-[calc(100%-4rem)] w-20 bg-[#00000066] z-20`}
-          nextButtonStyle={`swiper-button-next absolute top-0 right-0 hidden lg:flex h-[calc(100%-4rem)] w-20 bg-[#00000066] z-20`}
+          prevButtonStyle={`swiper-button-prev absolute top-0 left-0 hidden lg:flex h-[calc(100%-2rem-5px)] w-20 bg-[#00000066] z-20`}
+          nextButtonStyle={`swiper-button-next absolute top-0 right-0 hidden lg:flex h-[calc(100%-2rem-5px)] w-20 bg-[#00000066] z-20`}
           className="mySwiper h-[70dvh] sm:h-full"
         >
           {bannerGroup.map((banner) => (

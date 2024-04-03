@@ -4,19 +4,25 @@ import { FC } from "react";
 const ValueProposition: FC = () => {
   return (
     <>
-      <section className="flex items-center h-24 bg-primary-25">
-        <div className="container flex flex-wrap justify-between gap-x-10 w-full h-full">
+      <section className="flex items-center h-max bg-primary-25">
+        <div
+          className={`lg:container flex flex-wrap justify-between \ 
+          gap-4 w-full h-full px-8`}
+        >
           {valuePropositions.map((item) => (
-            <span key={item.id} className="flex items-center py-7">
+            <div
+              key={item.id}
+              className="flex items-center justify-between h-full py-4"
+            >
               <img
                 src={item.src}
                 alt={item.alt}
-                className="h-full object-contain"
+                className="w-max h-max object-cover"
               />
-              <p className="text-sm text-primary-500 text-nowrap capitalize ml-4">
+              <p className="suggested-value__text text-primary-500 capitalize ml-4">
                 {item.text}
               </p>
-            </span>
+            </div>
           ))}
         </div>
       </section>

@@ -13,27 +13,24 @@
 ::-webkit-scrollbar {
   width: 0;
 }
-
 .header-list-text {
   font-size: clamp(12px, 1vmax, 48px);
 }
-
-/*-**************/
-/*    Banner    */
-/*-**************/
-
+/*!    Banner    */
 .swiper {
   width: 100%;
 }
 .swiper-wrapper {
-  height: calc(100% - 4rem);
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .swiper-pagination {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: max-content;
+  height: 5px;
   margin-top: 2rem;
   bottom: 0 !important;
   z-index: 20;
@@ -63,7 +60,6 @@
 .swiper-button-prev::after {
   content: none;
 }
-
 .banner__title {
   font-size: clamp(14px, 2.5vmax, 48px);
   text-wrap: nowrap;
@@ -71,11 +67,7 @@
 .banner__button-text {
   font-size: clamp(12px, 0.8vmax, 48px);
 }
-
-/*-**************/
-/*  Categories  */
-/*-**************/
-
+/*!  Categories  */
 .product-category__title {
   font-size: clamp(20px, 1.5vmax, 48px);
 }
@@ -83,11 +75,7 @@
   font-size: clamp(8px, 1.1vmax, 48px);
   font-weight: 600;
 }
-
-/*-******************/
-/* skin-type part-1 */
-/*-******************/
-
+/*! skin analysis */
 .skincare-analysis {
   font-size: clamp(20px, 2vmax, 48px);
 }
@@ -104,11 +92,7 @@
   font-size: clamp(10px, 1.7vmax, 48px);
   text-wrap: nowrap;
 }
-/*- best seller-*/
-/*-**************/
-/*   Products   */
-/*-**************/
-
+/*! best seller */
 .best-seller-product__title {
   font-size: clamp(16px, 1.2vmax, 48px);
 }
@@ -127,16 +111,12 @@
   background-repeat: no-repeat;
   background-color: white;
 }
-
 @media only screen and (min-width: 768px) {
   .swiper-best-seller > .swiper-pagination {
     display: none;
   }
 }
-/*-***************/
-/*- new product -*/
-/*-***************/
-/* .swiper-new-product  */
+/*! new product */
 .swiper-new-product .swiper-pagination {
   height: max-content;
   margin-top: 2.5rem;
@@ -163,10 +143,7 @@
     display: none;
   }
 }
-/*-***************/
-/*-special offer-*/
-/*-***************/
-
+/*! special offer */
 .special-offer__title {
   font-size: clamp(20px, 1.2vmax, 48px);
   font-weight: bold;
@@ -178,11 +155,7 @@
 .special-offer__text-second {
   font-size: clamp(14px, 0.9vmax, 48px);
 }
-
-/*-***************/
-/*-  Our Brand  -*/
-/*-***************/
-
+/*!  Our Brand  */
 .our-brand__title {
   font-size: clamp(20px, 1.5vmax, 48px);
   font-weight: bold;
@@ -193,10 +166,7 @@
 .our-brand__button {
   font-size: clamp(14px, 1.1vmax, 18px);
 }
-
-/*-***************/
-/*-   Our Blog  -*/
-/*-***************/
+/*!  Our Blog  */
 @media only screen and (min-width: 768px) {
   .our-blog-swiper .swiper-pagination {
     display: none;
@@ -207,11 +177,11 @@
   font-weight: bold;
 }
 .our-blog-post__title {
-  font-size: clamp(18px, 1.1vmax, 48px);
+  font-size: clamp(16px, 1.1vmax, 48px);
   font-weight: bold;
 }
 .our-blog-post__info {
-  font-size: clamp(8px, 0.7vmax, 14px);
+  font-size: clamp(12px, 0.7vmax, 14px);
 }
 .our-blog__button-text {
   font-size: clamp(14px, 1.1vmax, 15px);
@@ -225,9 +195,67 @@
 .truncate-overflow::after {
   content: "...";
   position: absolute;
-  bottom: 0;
+  bottom: min(5px, 3px);
   right: 0;
-  width: 2rem;
+  width: 2.2rem;
   height: max-content;
   background-color: white;
+}
+/*!     Footer    */
+.suggested-value__text {
+  font-size: clamp(10px, 0.8vmax, 18px);
+}
+.about-us__text {
+  font-size: clamp(14px, 0.7vmax, 14px);
+}
+.about-us__text {
+  font-size: clamp(14px, 0.7vmax, 14px);
+}
+.about-us__label input[type="checkbox"] {
+  position: absolute;
+  clip-path: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.custome-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.about-us__label input[type="checkbox"]:checked + .custome-checkbox::before {
+  border-color: black;
+}
+.about-us__label input[type="checkbox"]:checked + .custome-checkbox::after {
+  background-color: black;
+}
+.about-us__label .custome-checkbox::before {
+  content: "";
+  display: inline-block;
+  border-radius: 3px;
+  background-color: transparent;
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #cbcbcb;
+}
+.about-us__label .custome-checkbox::after {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 2px;
+  background-color: transparent;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+}
+
+.social-media__text {
+  font-size: clamp(10px, 0.7vmax, 14px);
+}
+.privacy__text {
+  font-size: clamp(10px, 0.7vmax, 14px);
 }
