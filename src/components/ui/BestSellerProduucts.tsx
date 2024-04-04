@@ -7,6 +7,7 @@ import { GET_PRODUCTS } from "@graphql/queries";
 
 import "swiper/css/navigation";
 import SwiperWrapper from "../SwiperWrapper";
+import SkeletonLoader from "./SkeletonLoader";
 
 type Products = {
   title: string;
@@ -40,24 +41,24 @@ const BestSellerProduucts: FC = () => {
   return (
     <>
       <section className="lg:container relative flex flex-col items-center justify-center mt-14 px-8">
-        {!loading ? (
-          <div className="relative w-full h-full">
-            <h2 className="text-center text-2xl font-bold mb-6">
-              our Best Sellers
-            </h2>
-            <SwiperWrapper
-              isOutSide={true}
-              spaceBetween={15}
-              loop={true}
-              breakpoints={BREAK_POINT}
-              modules={[Pagination, Navigation]}
-              prevButtonStyle={`left-arrow hidden md:inline-block absolute top-1/2 -translate-y-1/2 left-0 \ 
+        <div className="relative w-full h-full">
+          <h2 className="text-center text-2xl font-bold mb-6">
+            our Best Sellers
+          </h2>
+          <SwiperWrapper
+            isOutSide={true}
+            spaceBetween={15}
+            loop={true}
+            breakpoints={BREAK_POINT}
+            modules={[Pagination, Navigation]}
+            prevButtonStyle={`left-arrow hidden md:inline-block absolute top-1/2 -translate-y-1/2 left-0 \ 
               -translate-x-5 w-10 h-10 cursor-pointer border-1 border-Gray-DFDFDF z-10`}
-              nextButtonStyle={`right-arrow hidden md:inline-block absolute right-0 translate-x-5 top-1/2 \ 
+            nextButtonStyle={`right-arrow hidden md:inline-block absolute right-0 translate-x-5 top-1/2 \ 
               -translate-y-1/2 w-10 h-10 cursor-pointer bg-white border-1 border-Gray-DFDFDF z-10`}
-              className="swiper-best-seller h-max py-1"
-            >
-              {data?.product?.map((product) => (
+            className="swiper-best-seller h-max py-1"
+          >
+            {!loading ? (
+              data?.product?.map((product) => (
                 <SwiperSlide
                   key={`${product.slug}`}
                   className={`flex flex-col w-full h-max  border-1 \
@@ -78,12 +79,25 @@ const BestSellerProduucts: FC = () => {
                     <p className=" self-start">${product.price}</p>
                   </div>
                 </SwiperSlide>
-              ))}
-            </SwiperWrapper>
-          </div>
-        ) : (
-          <div>Loading...</div>
-        )}
+              ))
+            ) : (
+              <>
+                <SwiperSlide className="flex w-full">
+                  <SkeletonLoader className="w-full" imageClassName="h-96" />
+                </SwiperSlide>
+                <SwiperSlide className="flex w-full">
+                  <SkeletonLoader className="w-full" imageClassName="h-96" />
+                </SwiperSlide>
+                <SwiperSlide className="flex w-full">
+                  <SkeletonLoader className="w-full" imageClassName="h-96" />
+                </SwiperSlide>
+                <SwiperSlide className="flex w-full">
+                  <SkeletonLoader className="w-full" imageClassName="h-96" />
+                </SwiperSlide>
+              </>
+            )}
+          </SwiperWrapper>
+        </div>
       </section>
     </>
   );

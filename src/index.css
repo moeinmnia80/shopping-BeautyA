@@ -226,10 +226,10 @@
   align-items: center;
 }
 .about-us__label input[type="checkbox"]:checked + .custome-checkbox::before {
-  border-color: black;
+  border-color: #0c0c0c;
 }
 .about-us__label input[type="checkbox"]:checked + .custome-checkbox::after {
-  background-color: black;
+  background-color: #0c0c0c;
 }
 .about-us__label .custome-checkbox::before {
   content: "";

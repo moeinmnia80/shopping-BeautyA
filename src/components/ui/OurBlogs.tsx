@@ -7,6 +7,7 @@ import { GET_BLOGS } from "@graphql/queries";
 import { changeDate } from "@utils/helper";
 import SwiperWrapper from "@components/SwiperWrapper";
 import { SwiperSlide } from "swiper/react";
+import SkeletonLoader from "./SkeletonLoader";
 
 type Blog = {
   title: string;
@@ -35,7 +36,7 @@ const BREAK_POINT = {
   },
 };
 const OurBlogs: FC = () => {
-  const { data } = useQuery<{ blogs: Blog[] }>(GET_BLOGS)!;
+  const { loading, data } = useQuery<{ blogs: Blog[] }>(GET_BLOGS)!;
 
   return (
     <>
@@ -47,32 +48,45 @@ const OurBlogs: FC = () => {
           modules={[Pagination, Navigation]}
           prevButtonStyle="hidden"
           nextButtonStyle="hidden"
-          className="our-blog-swiper h-max mt-6"
+          className="our-blog-swiper h-full mt-6"
         >
-          {/* <ul className="flex gap-5 w-full mt-6"> */}
-          {data?.blogs.map((blog) => (
-            <SwiperSlide
-              key={`${blog.slug}`}
-              className="w-full border-1 border-Gray-DFDFDF"
-            >
-              <img
-                src={`${blog.image.url}`}
-                alt={blog.about}
-                className="w-full object-cover"
-              />
-              <div className="flex flex-col gap-3 bg-white p-5">
-                <div>
-                  <h4 className="our-blog-post__title">{blog.title}</h4>
-                  <p className="our-blog-post__info text-Gray-606060">
-                    {blog.about} | {blog.author} | {changeDate(blog.date)}
+          {loading ? (
+            data?.blogs.map((blog) => (
+              <SwiperSlide
+                key={`${blog.slug}`}
+                className="w-full border-1 border-Gray-DFDFDF"
+              >
+                <img
+                  src={`${blog.image.url}`}
+                  alt={blog.about}
+                  className="w-full object-cover"
+                />
+                <div className="flex flex-col gap-3 bg-white p-5">
+                  <div>
+                    <h4 className="our-blog-post__title">{blog.title}</h4>
+                    <p className="our-blog-post__info text-Gray-606060">
+                      {blog.about} | {blog.author} | {changeDate(blog.date)}
+                    </p>
+                  </div>
+                  <p className="truncate-overflow our-blog__button-text">
+                    {blog.description}
                   </p>
                 </div>
-                <p className="truncate-overflow our-blog__button-text">
-                  {blog.description}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))
+          ) : (
+            <>
+              <SwiperSlide>
+                <SkeletonLoader isBlog={true} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SkeletonLoader isBlog={true} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SkeletonLoader isBlog={true} />
+              </SwiperSlide>
+            </>
+          )}
           {/* </ul> */}
         </SwiperWrapper>
         <button className="md:absolute md:top-6 md:right-12 our-blog__button-text md:capitalize text-primary-500 mt-4 md:mt-0">

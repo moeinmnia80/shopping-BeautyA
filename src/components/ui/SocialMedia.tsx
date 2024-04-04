@@ -23,7 +23,7 @@ const SocialMedia = () => {
           </div>
           <div className="flex w-full justify-between md:w-max md:gap-3 h-full">
             {socialMedia.map((media) => (
-              <Link to={"/"}>
+              <Link key={media.id} to={"/"}>
                 <img
                   key={media.id}
                   src={`${media.src}`}

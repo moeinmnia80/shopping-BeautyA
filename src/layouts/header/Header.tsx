@@ -19,7 +19,7 @@ const Header = () => {
       <section
         className={`sticky top-0 flex items-center justify-center w-full h-20 lg:h-24 bg-background border-b-1  border-Gray-DFDFDF overflow-hidden z-50`}
       >
-        <nav className="lg:container flex justify-between items-end w-full h-full p-6 xl:px-0">
+        <nav className="lg:container flex justify-between items-end w-full h-full p-6 px-8">
           <div className="md:hidden flex w-1/4 z-10">
             <HambergerMenuIcon style="w-5 h-5 mr-2" />
             <SearchIcon style="w-5 h-5" />
