@@ -50,7 +50,7 @@ const OurBlogs: FC = () => {
           nextButtonStyle="hidden"
           className="our-blog-swiper h-full mt-6"
         >
-          {loading ? (
+          {!loading ? (
             data?.blogs.map((blog) => (
               <SwiperSlide
                 key={`${blog.slug}`}
