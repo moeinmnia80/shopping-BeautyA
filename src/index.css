@@ -43,17 +43,11 @@
 .swiper-button-prev {
   top: 21px;
   left: 0;
-  background-image: url("./src/assets/images/left.png");
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 30;
 }
 .swiper-button-next {
   top: 21px;
   right: 0;
-  background-image: url("./src/assets/images/right.png");
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 30;
 }
 .swiper-button-next::after,
