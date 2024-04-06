@@ -38,8 +38,8 @@ const SwiperWrapper: FC<
 }) => {
   const [isUpdateRef, setIsUpdateRef] = useState(false);
 
-  const navigationPrevRef = useRef<HTMLSpanElement | null>(null);
-  const navigationNextRef = useRef<HTMLSpanElement | null>(null);
+  const navigationPrevRef = useRef<HTMLDivElement | null>(null);
+  const navigationNextRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setIsUpdateRef(true);
@@ -48,9 +48,9 @@ const SwiperWrapper: FC<
   return (
     <>
       {isOutSide && (
-        <span className={prevButtonStyle} ref={navigationPrevRef}>
+        <div className={prevButtonStyle} ref={navigationPrevRef}>
           <img src={`${darkLeft}`} alt="prev slide" />
-        </span>
+        </div>
       )}
       <Swiper
         speed={props?.speed && 400}
@@ -74,22 +74,22 @@ const SwiperWrapper: FC<
         {...props}
       >
         {!isOutSide && (
-          <span className={prevButtonStyle} ref={navigationPrevRef}>
+          <div className={prevButtonStyle} ref={navigationPrevRef}>
             <img src={`${darkLeft}`} alt="prev slide" />
-          </span>
+          </div>
         )}
         {children}
         {!isOutSide && (
-          <span className={nextButtonStyle} ref={navigationNextRef}>
+          <div className={nextButtonStyle} ref={navigationNextRef}>
             <img src={`${darkRight}`} alt="next slide" />
-          </span>
+          </div>
         )}
       </Swiper>
 
       {isOutSide && (
-        <span className={nextButtonStyle} ref={navigationNextRef}>
+        <div className={nextButtonStyle} ref={navigationNextRef}>
           <img src={`${darkRight}`} alt="next slide" />
-        </span>
+        </div>
       )}
     </>
   );
