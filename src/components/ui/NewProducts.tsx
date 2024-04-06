@@ -35,6 +35,7 @@ const NewProducts: FC = () => {
         <div className="container relative w-full px-8">
           <SwiperWrapper
             isOutSide={true}
+            isDarkArrow={true}
             slidesPerView={"auto"}
             spaceBetween={15}
             modules={[Pagination, Navigation]}

@@ -13,14 +13,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import right from "@assets/images/right.png";
-import left from "@assets/images/left.png";
+import lightRight from "@assets/images/right.png";
+import darkRight from "@assets/images/rightArrow.png";
+import lightLeft from "@assets/images/left.png";
+import darkLeft from "@assets/images/leftArrow.png";
 
 type SwiperWrapperProps = {
   children: ReactNode;
   prevButtonStyle: string;
   nextButtonStyle: string;
   isOutSide?: boolean;
+  isDarkArrow?: boolean;
 };
 
 const SwiperWrapper: FC<
@@ -30,6 +33,7 @@ const SwiperWrapper: FC<
   prevButtonStyle,
   nextButtonStyle,
   isOutSide = false,
+  isDarkArrow = false,
   ...props
 }) => {
   const [isUpdateRef, setIsUpdateRef] = useState(false);
@@ -45,7 +49,7 @@ const SwiperWrapper: FC<
     <>
       {isOutSide && (
         <span className={prevButtonStyle} ref={navigationPrevRef}>
-          <img src={`${left}`} alt="prev slide" />
+          <img src={`${isDarkArrow ? darkLeft : lightLeft}`} alt="prev slide" />
         </span>
       )}
       <Swiper
@@ -71,20 +75,29 @@ const SwiperWrapper: FC<
       >
         {!isOutSide && (
           <span className={prevButtonStyle} ref={navigationPrevRef}>
-            <img src={`${left}`} alt="prev slide" />
+            <img
+              src={`${isDarkArrow ? darkLeft : lightLeft}`}
+              alt="prev slide"
+            />
           </span>
         )}
         {children}
         {!isOutSide && (
           <span className={nextButtonStyle} ref={navigationNextRef}>
-            <img src={`${right}`} alt="next slide" />
+            <img
+              src={`${isDarkArrow ? darkRight : lightRight}`}
+              alt="next slide"
+            />
           </span>
         )}
       </Swiper>
 
       {isOutSide && (
         <span className={nextButtonStyle} ref={navigationNextRef}>
-          <img src={`${right}`} alt="next slide" />
+          <img
+            src={`${isDarkArrow ? darkRight : lightRight}`}
+            alt="next slide"
+          />
         </span>
       )}
     </>

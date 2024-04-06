@@ -47,6 +47,7 @@ const BestSellerProduucts: FC = () => {
           </h2>
           <SwiperWrapper
             isOutSide={true}
+            isDarkArrow={true}
             spaceBetween={15}
             loop={true}
             breakpoints={BREAK_POINT}
