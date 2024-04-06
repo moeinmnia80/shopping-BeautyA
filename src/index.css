@@ -14,7 +14,10 @@
   width: 0;
 }
 .header-list-text {
-  font-size: clamp(12px, 1vmax, 48px);
+  font-size: clamp(12px, 1vmax, 24px);
+}
+.submenu__ads-text {
+  font-size: clamp(13px, 1vmax, 14px);
 }
 /*!    Banner    */
 .swiper {

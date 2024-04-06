@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { navMenuItems } from "@constants/navMenuItems";
@@ -14,6 +14,14 @@ import SubMenu from "@components/SubMenu";
 const Header = () => {
   const [tab, setTab] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+
+  useEffect(() => {
+    isHover && document.body.classList.add(`overflow-hidden`);
+    return () => {
+      isHover && document.body.classList.remove(`overflow-hidden`);
+    };
+  }, [isHover]);
 
   return (
     <>
@@ -37,7 +45,7 @@ const Header = () => {
               className="relative w-full h-full object-contain select-none "
             />
           </div>
-          <ul className="relative hidden md:flex items-end justify-center gap-x-14 h-full font-medium">
+          <ul className="relative hidden md:flex items-end justify-center gap-x-14 h-full font-medium px-2">
             {navMenuItems.map((item) => (
               <Link
                 to={"/"}
@@ -46,9 +54,14 @@ const Header = () => {
                   tab === item.name.toLowerCase() && "text-primary-500"
                 }`}
                 onClick={() => setTab(item.name.toLowerCase())}
+                onMouseEnter={() => {
+                  item.name === "Women Skincare"
+                    ? setIsHover(true)
+                    : setIsHover(false);
+                }}
               >
                 {item.name}
-                {item.name === "Women Skincare" && <SubMenu />}
+                {isHover && <SubMenu />}
               </Link>
             ))}
           </ul>
