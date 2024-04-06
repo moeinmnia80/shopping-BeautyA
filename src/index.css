@@ -93,18 +93,6 @@
 .best-seller-product__text {
   font-size: clamp(12px, 0.8vmax, 48px);
 }
-.left-arrow {
-  background: url("./src/assets/images/leftArrow.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
-}
-.right-arrow {
-  background: url("./src/assets/images/rightArrow.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
-}
 @media only screen and (min-width: 768px) {
   .swiper-best-seller > .swiper-pagination {
     display: none;
