@@ -13,9 +13,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import lightRight from "@assets/images/right.png";
+import lightRight from "../assets/images/right.png";
 import darkRight from "../assets/images/rightArrow.png";
-import lightLeft from "@assets/images/left.png";
+import lightLeft from "../assets/images/left.png";
 import darkLeft from "../assets/images/leftArrow.png";
 
 type SwiperWrapperProps = {
