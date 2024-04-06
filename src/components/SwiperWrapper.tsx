@@ -13,10 +13,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import lightRight from "../assets/images/right.png";
-import darkRight from "../assets/images/rightArrow.png";
-import lightLeft from "../assets/images/left.png";
-import darkLeft from "../assets/images/leftArrow.png";
+import lightRight from "@assets/images/right.png";
+import darkRight from "@assets/images/rightArrow.png";
+import lightLeft from "@assets/images/left.png";
+import darkLeft from "@assets/images/leftArrow.png";
 
 type SwiperWrapperProps = {
   children: ReactNode;
@@ -49,7 +49,7 @@ const SwiperWrapper: FC<
     <>
       {isOutSide && (
         <span className={prevButtonStyle} ref={navigationPrevRef}>
-          <img src={`${isDarkArrow ? darkLeft : lightLeft}`} alt="prev slide" />
+          <img src={`${darkLeft}`} alt="prev slide" />
         </span>
       )}
       <Swiper
@@ -75,29 +75,20 @@ const SwiperWrapper: FC<
       >
         {!isOutSide && (
           <span className={prevButtonStyle} ref={navigationPrevRef}>
-            <img
-              src={`${isDarkArrow ? darkLeft : lightLeft}`}
-              alt="prev slide"
-            />
+            <img src={`${darkLeft}`} alt="prev slide" />
           </span>
         )}
         {children}
         {!isOutSide && (
           <span className={nextButtonStyle} ref={navigationNextRef}>
-            <img
-              src={`${isDarkArrow ? darkRight : lightRight}`}
-              alt="next slide"
-            />
+            <img src={`${darkRight}`} alt="next slide" />
           </span>
         )}
       </Swiper>
 
       {isOutSide && (
         <span className={nextButtonStyle} ref={navigationNextRef}>
-          <img
-            src={`${isDarkArrow ? darkRight : lightRight}`}
-            alt="next slide"
-          />
+          <img src={`${darkRight}`} alt="next slide" />
         </span>
       )}
     </>
