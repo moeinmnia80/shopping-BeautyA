@@ -1,8 +1,6 @@
-import { ComponentPropsWithoutRef, FC } from "react";
+import { FC } from "react";
 
-const HambergerMenuIcon: FC<
-  { style: string } & ComponentPropsWithoutRef<"svg">
-> = ({ style, ...rest }) => {
+const LeftArrow: FC<{ style: string }> = ({ style }) => {
   return (
     <>
       <svg
@@ -12,16 +10,15 @@ const HambergerMenuIcon: FC<
         strokeWidth={1.5}
         stroke="currentColor"
         className={style}
-        {...rest}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
         />
       </svg>
     </>
   );
 };
 
-export default HambergerMenuIcon;
+export default LeftArrow;

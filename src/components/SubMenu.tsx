@@ -8,24 +8,14 @@ const SubMenu = () => {
         <div className=" flex w-full h-fit bg-background text-black py-8">
           <div className="lg:container flex items-start justify-between px-8">
             <ul className="flex flex-col gap-1 w-full font-bold">
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                New
-              </li>
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                Best Sellers
-              </li>
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                Travel Size
-              </li>
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                Proffesional Treatments
-              </li>
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                Daily Defence
-              </li>
-              <li className="hover:text-primary-500 duration-300 cursor-pointer">
-                Virtual Skincare Analisys
-              </li>
+              {menuItems.special.map((item) => (
+                <li
+                  key={item.id}
+                  className="hover:text-primary-500 duration-300 cursor-pointer capitalize"
+                >
+                  {item.text}
+                </li>
+              ))}
             </ul>
             <ul className="flex flex-col gap-1 w-full capitalize font-light">
               <h4 className="font-bold">by category</h4>

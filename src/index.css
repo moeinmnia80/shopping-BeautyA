@@ -244,3 +244,9 @@
 .privacy__text {
   font-size: clamp(10px, 0.7vmax, 14px);
 }
+
+@layer components {
+  .menu-label__items {
+    @apply w-full bg-white font-bold capitalize border-t-1 border-b-1 border-Gray-DFDFDF py-3 pl-1 pr-3;
+  }
+}

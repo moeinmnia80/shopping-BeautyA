@@ -10,11 +10,14 @@ import SearchIcon from "@assets/icons/SearchIcon";
 import logo from "@assets/images/logo.png";
 import HambergerMenuIcon from "@assets/icons/HambergerMenuIcon";
 import SubMenu from "@components/SubMenu";
+import MenuLabel from "@components/MenuLabel";
+import XIcone from "@assets/icons/XIcone";
 
 const Header = () => {
   const [tab, setTab] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     isHover && document.body.classList.add(`overflow-hidden`);
@@ -31,8 +34,21 @@ const Header = () => {
       >
         <nav className="lg:container flex justify-between items-end w-full h-full px-8">
           <div className="md:hidden flex w-1/4 z-10 py-5">
-            <HambergerMenuIcon style="w-5 h-5 mr-2" />
-            <SearchIcon style="w-5 h-5" />
+            {isOpen ? (
+              <XIcone
+                style="w-5 h-5 mr-2"
+                onClick={() => setIsOpen((prev) => !prev)}
+              />
+            ) : (
+              <HambergerMenuIcon
+                style="w-5 h-5 mr-2"
+                onClick={() => setIsOpen((prev) => !prev)}
+              />
+            )}
+            <SearchIcon
+              style="w-5 h-5"
+              onClick={() => setIsSearching((prev) => !prev)}
+            />
           </div>
           <div
             className="relative w-max h-full  py-6"
@@ -50,7 +66,8 @@ const Header = () => {
               <Link
                 to={"/"}
                 key={item.id}
-                className={`group flex items-end h-full header-list-text text-nowrap hover:text-primary-500 duration-300 py-4 ${
+                className={`group flex items-end h-full header-list-text text-nowrap \
+                hover:text-primary-500 duration-300 py-4 ${
                   tab === item.name.toLowerCase() && "text-primary-500"
                 }`}
                 onClick={() => setTab(item.name.toLowerCase())}
@@ -82,7 +99,8 @@ const Header = () => {
             </div>
           </div>
         </nav>
-        <SearchContainer isOpen={isOpen} />
+        <MenuLabel isOpen={isOpen} />
+        <SearchContainer isSearching={isSearching} />
       </section>
     </>
   );

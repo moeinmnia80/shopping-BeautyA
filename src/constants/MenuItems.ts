@@ -1,9 +1,18 @@
 type menuItemType = {
+  special: { id: number; text: string }[];
   category: { id: number; text: string }[];
   skinCondition: { id: number; text: string }[];
   collection: { id: number; text: string }[];
 };
 export const menuItems: menuItemType = {
+  special: [
+    { id: 0, text: "new" },
+    { id: 1, text: "best sellers" },
+    { id: 2, text: "travel size" },
+    { id: 3, text: "proffesional treatments" },
+    { id: 4, text: "daily defence" },
+    { id: 5, text: "virtual skincare analisys" },
+  ],
   category: [
     { id: 0, text: "cleansers" },
     { id: 1, text: "exfoliators" },
