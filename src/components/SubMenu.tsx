@@ -1,11 +1,17 @@
 import subMenuAdsImg from "@assets/images/SubMenu.png";
 import { menuItems } from "@constants/MenuItems";
+import { FC } from "react";
 
-const SubMenu = () => {
+const SubMenu: FC<{ setIsHover: (value: boolean) => void }> = ({
+  setIsHover,
+}) => {
   return (
     <>
       <section className="fixed top-20 lg:top-24 left-0 hidden group-hover:flex w-full h-dvh bg-[#00000020] backdrop-blur-sm cursor-default ">
-        <div className=" flex w-full h-fit bg-background text-black py-8">
+        <div
+          className=" flex w-full h-fit bg-background text-black py-8"
+          onMouseLeave={() => setIsHover(false)}
+        >
           <div className="lg:container flex items-start justify-between px-8">
             <ul className="flex flex-col gap-1 w-full font-bold">
               {menuItems.special.map((item) => (
