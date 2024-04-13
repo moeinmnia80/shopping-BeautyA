@@ -10,7 +10,6 @@ type LocationContainerProps = {
 const LocationContainer: FC<LocationContainerProps> = ({
   isClicked,
   setIsClicked,
-  setChangeLocation,
 }) => {
   return (
     <>
