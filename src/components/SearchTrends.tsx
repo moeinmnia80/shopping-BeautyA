@@ -3,13 +3,15 @@ import { FC } from "react";
 const SearchTrends: FC<{ searchHistory: string[] }> = ({ searchHistory }) => {
   return (
     <>
-      <div className="w-1/5">
+      <div className="flex flex-col w-full md:w-1/5">
         <ul className="mb-6">
           <h4 className="font-bold text-xl mb-6">Trending Now</h4>
-          <li>Advanced Night Repair</li>
-          <li>Pure Color</li>
-          <li>Moisturizer</li>
-          <li>Serum</li>
+          <li className="hover:text-primary-500 cursor-pointer">
+            Advanced Night Repair
+          </li>
+          <li className="hover:text-primary-500 cursor-pointer">Pure Color</li>
+          <li className="hover:text-primary-500 cursor-pointer">Moisturizer</li>
+          <li className="hover:text-primary-500 cursor-pointer">Serum</li>
         </ul>
         <ul>
           <h4 className="font-bold text-xl mb-6">Your Recent Search</h4>

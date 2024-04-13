@@ -1,6 +1,9 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const LanguageIcon: FC<{ style: string }> = ({ style }) => {
+const LanguageIcon: FC<{ style: string } & ComponentProps<"svg">> = ({
+  style,
+  ...props
+}) => {
   return (
     <>
       <svg
@@ -10,6 +13,7 @@ const LanguageIcon: FC<{ style: string }> = ({ style }) => {
         strokeWidth={1.25}
         stroke="currentColor"
         className={style}
+        {...props}
       >
         <path
           strokeLinecap="round"

@@ -27,10 +27,10 @@ const SearchContainer: FC<SearchContainerProps> = ({
       <section
         className={`fixed top-20 lg:top-24 ${
           isSearching ? "flex" : "hidden"
-        } w-full h-dvh bg-[#0000020] backdrop-blur-sm`}
+        } w-full h-svh bg-[#0000020] backdrop-blur-sm`}
       >
         <div
-          className={`w-full h-max bg-background`}
+          className={`w-full h-svh overflow-auto md:overflow-hidden md:h-max bg-background pb-12  md:pb-0`}
           onMouseLeave={() => setIsSearching(false)}
         >
           <div className="lg:container px-8 py-8">
@@ -49,7 +49,7 @@ const SearchContainer: FC<SearchContainerProps> = ({
                 />
               </label>
             </form>
-            <div className="flex w-full py-6">
+            <div className="flex flex-col md:flex-row w-full py-6">
               {!search ? (
                 <>
                   <SearchTrends searchHistory={searchHistory} />

@@ -5,7 +5,7 @@ const SearchSuggestion: FC<{ search: string }> = ({ search }) => {
     <>
       <div>
         <h4 className="font-bold text-xl mb-6">Suggestion</h4>
-        <p>"{search}"</p>
+        <p>{search}</p>
       </div>
     </>
   );

@@ -42,6 +42,7 @@ export default {
         "Gray-DFDFDF": "#DFDFDF",
         "Gray-EDEDED": "#EDEDED",
         "Gray-F9F9F9": "#F9F9F9",
+        Error: "#C30000",
       },
       borderWidth: {
         1: "1px",

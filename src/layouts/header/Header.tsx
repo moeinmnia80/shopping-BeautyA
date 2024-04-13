@@ -12,12 +12,18 @@ import HambergerMenuIcon from "@assets/icons/HambergerMenuIcon";
 import SubMenu from "@components/SubMenu";
 import MenuLabel from "@components/MenuLabel";
 import XIcone from "@assets/icons/XIcone";
+import LocationContainer from "@components/LocationContainer";
 
 const Header = () => {
   const [tab, setTab] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [changeLocation, setChangeLocation] = useState<{
+    region: string;
+    language: string;
+  } | null>(null);
 
   useEffect(() => {
     isHover && document.body.classList.add(`overflow-hidden`);
@@ -51,14 +57,14 @@ const Header = () => {
             />
           </div>
           <div
-            className="relative w-max h-full  py-6"
+            className="relative w-max h-full py-6"
             onClick={() => setTab("")}
           >
             <span className="absolute -top-2 -right-2 w-44 h-44 bg-primary-50 rounded-full blur-2xl" />
             <img
               src={logo}
               alt="beautya"
-              className="relative w-full h-full object-contain select-none "
+              className="relative w-full h-full object-contain select-none cursor-pointer"
             />
           </div>
           <ul className="relative hidden md:flex items-end justify-center gap-x-14 h-full font-medium px-2">
@@ -88,13 +94,16 @@ const Header = () => {
               onMouseEnter={() => setIsSearching((prev) => !prev)}
             />
             <span className="hidden lg:flex w-px h-5 bg-Gray-868686 mx-2" />
-            <LanguageIcon style="w-5 h-5" />
+            <LanguageIcon
+              style="w-5 h-5 cursor-pointer"
+              onClick={() => setIsClicked((prev) => !prev)}
+            />
             <div className="flex items-end ml-1.5">
               <p className="relative -bottom-[2px] text-sm md:text-[1rem] ">
-                US
+                {changeLocation?.region || "US"}
               </p>
               <span className="relative inline-block text-xs text-Gray-606060 ml-1">
-                (EN)
+                {changeLocation?.language || "(EN)"}
               </span>
             </div>
           </div>
@@ -106,6 +115,11 @@ const Header = () => {
             setIsSearching={setIsSearching}
           />
         )}
+        <LocationContainer
+          isClicked={isClicked}
+          setIsClicked={setIsClicked}
+          setChangeLocation={setChangeLocation}
+        />
       </section>
     </>
   );
