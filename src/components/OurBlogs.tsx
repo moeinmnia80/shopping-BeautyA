@@ -5,9 +5,9 @@ import { useQuery } from "@apollo/client";
 import { GET_BLOGS } from "@graphql/queries";
 
 import { changeDate } from "@utils/helper";
-import SwiperWrapper from "@components/SwiperWrapper";
+import SwiperWrapper from "@components/ui/SwiperWrapper";
 import { SwiperSlide } from "swiper/react";
-import SkeletonLoader from "./SkeletonLoader";
+import SkeletonLoader from "./ui/SkeletonLoader";
 
 type Blog = {
   title: string;

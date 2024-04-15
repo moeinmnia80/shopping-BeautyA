@@ -1,6 +1,8 @@
 import { FC } from "react";
 
-const SearchTrends: FC<{ searchHistory: string[] }> = ({ searchHistory }) => {
+type SearchTrendsProps = { searchHistory: string[] };
+
+const SearchTrends: FC<SearchTrendsProps> = ({ searchHistory }) => {
   return (
     <>
       <div className="flex flex-col w-full md:w-1/5">

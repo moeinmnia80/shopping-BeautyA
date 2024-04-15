@@ -7,7 +7,10 @@ const SpecialOffers: FC = () => {
   return (
     <>
       <section className="lg:bg-primary-25 ">
-        <div className="lg:container relative flex flex-col md:flex-row items-center justify-center gap-6 pt-14 lg:px-8 px-0 md:pt-0 mt-14">
+        <div
+          className={`lg:container relative flex flex-col md:flex-row items-center 
+          justify-center gap-6 pt-14 lg:px-8 px-0 md:pt-0 mt-14`}
+        >
           <div className="w-full md:w-1/2 h-full">
             <img
               src={`${offerBanner}`}
@@ -25,8 +28,8 @@ const SpecialOffers: FC = () => {
               </p>
             ))}
             <button
-              className={`text-primary-500 md:text-white bg-transparent border-2 border-primary-500 \
-           md:bg-primary-500 px-8 py-3 self-center md:self-end md:capitalize`}
+              className={`text-primary-500 md:text-white bg-transparent border-2 border-primary-500
+              md:bg-primary-500 px-8 py-3 self-center md:self-end md:capitalize`}
             >
               find branches
             </button>

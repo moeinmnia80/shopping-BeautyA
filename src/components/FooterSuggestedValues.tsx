@@ -1,15 +1,16 @@
-import { valuePropositions } from "@constants/valuePropositionItems";
 import { FC } from "react";
 
-const ValueProposition: FC = () => {
+import { suggestedValues } from "@constants/suggestedValuesItems";
+
+const SuggestedValue: FC = () => {
   return (
     <>
       <section className="flex items-center h-max bg-primary-25">
         <div
-          className={`lg:container flex flex-wrap justify-between \ 
+          className={`lg:container flex flex-wrap justify-between
           gap-4 w-full h-full px-8`}
         >
-          {valuePropositions.map((item) => (
+          {suggestedValues.map((item) => (
             <div
               key={item.id}
               className="flex items-center justify-between h-full py-4"
@@ -30,4 +31,4 @@ const ValueProposition: FC = () => {
   );
 };
 
-export default ValueProposition;
+export default SuggestedValue;

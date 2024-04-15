@@ -3,14 +3,14 @@ import img2 from "@assets/images/pp2.png";
 import img3 from "@assets/images/pp3.png";
 import img4 from "@assets/images/pp4.png";
 
-type popularProductsType = {
+type PopularProductsType = {
   id: number;
   img: string;
   title: string;
   text: string;
 };
 
-export const popularProducts: popularProductsType[] = [
+export const popularProducts: PopularProductsType[] = [
   {
     id: 0,
     img: img1,

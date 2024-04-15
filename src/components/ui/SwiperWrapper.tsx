@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+
 import { Swiper } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -24,11 +25,9 @@ type SwiperWrapperProps = {
   nextButtonStyle: string;
   isOutSide?: boolean;
   isDarkArrow?: boolean;
-};
+} & ComponentPropsWithoutRef<typeof Swiper>;
 
-const SwiperWrapper: FC<
-  SwiperWrapperProps & ComponentPropsWithoutRef<typeof Swiper>
-> = ({
+const SwiperWrapper: FC<SwiperWrapperProps> = ({
   children,
   prevButtonStyle,
   nextButtonStyle,

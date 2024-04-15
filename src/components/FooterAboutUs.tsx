@@ -7,8 +7,9 @@ import { aboutUs } from "@constants/aboutUs";
 import { products } from "@constants/products";
 import footerLogo from "@assets/images/footerLogo.png";
 
-const AboutUsFooter = () => {
+const AboutUs = () => {
   const [isAcceptPolicy, setIsAcceptPolicy] = useState(false);
+
   return (
     <>
       <section className="relative bg-primary-750 overflow-hidden">
@@ -96,4 +97,4 @@ const AboutUsFooter = () => {
   );
 };
 
-export default AboutUsFooter;
+export default AboutUs;

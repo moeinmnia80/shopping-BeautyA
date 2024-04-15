@@ -2,9 +2,9 @@ import { FC, FormEvent, useState } from "react";
 
 import SearchIcon from "@assets/icons/SearchIcon";
 
-import SearchSuggestion from "@components/SearchSuggestion";
 import SearchTrends from "@components/SearchTrends";
 import PopularProducts from "@components/PopularProducts";
+import SearchSuggestion from "@components/SearchSuggestion";
 
 type SearchContainerProps = {
   isSearching: boolean;
@@ -56,7 +56,9 @@ const SearchContainer: FC<SearchContainerProps> = ({
                   <PopularProducts />
                 </>
               ) : (
-                <SearchSuggestion search={search} />
+                <>
+                  <SearchSuggestion search={search} />
+                </>
               )}
             </div>
           </div>

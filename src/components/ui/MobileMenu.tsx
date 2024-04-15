@@ -5,10 +5,12 @@ import { menuItems } from "@constants/MenuItems";
 import ChevronLeft from "@assets/icons/ChevronLeft";
 import rightArrow from "@assets/images/rightArrow.png";
 
-const WomenSkincare: FC<{
+type MobileMenuProps = {
   isShow: boolean;
   setIsShow: (porps: boolean) => void;
-}> = ({ isShow, setIsShow }) => {
+};
+
+const MobileMenu: FC<MobileMenuProps> = ({ isShow, setIsShow }) => {
   return (
     <>
       <ul
@@ -52,4 +54,4 @@ const WomenSkincare: FC<{
   );
 };
 
-export default WomenSkincare;
+export default MobileMenu;

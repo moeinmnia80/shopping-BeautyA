@@ -1,10 +1,11 @@
-import subMenuAdsImg from "@assets/images/SubMenu.png";
-import { menuItems } from "@constants/MenuItems";
 import { FC } from "react";
 
-const SubMenu: FC<{ setIsHover: (value: boolean) => void }> = ({
-  setIsHover,
-}) => {
+import { menuItems } from "@constants/MenuItems";
+import subMenuAdsImg from "@assets/images/SubMenu.png";
+
+type HeaderSubMenuProps = { setIsHover: (value: boolean) => void };
+
+const HeaderSubMenu: FC<HeaderSubMenuProps> = ({ setIsHover }) => {
   return (
     <>
       <section className="fixed top-20 lg:top-24 left-0 hidden group-hover:flex w-full h-dvh bg-[#00000020] backdrop-blur-sm cursor-default ">
@@ -77,4 +78,4 @@ const SubMenu: FC<{ setIsHover: (value: boolean) => void }> = ({
   );
 };
 
-export default SubMenu;
+export default HeaderSubMenu;

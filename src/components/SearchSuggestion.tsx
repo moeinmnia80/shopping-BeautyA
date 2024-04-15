@@ -1,6 +1,8 @@
 import { FC } from "react";
 
-const SearchSuggestion: FC<{ search: string }> = ({ search }) => {
+type SearchSuggestionProps = { search: string };
+
+const SearchSuggestion: FC<SearchSuggestionProps> = ({ search }) => {
   return (
     <>
       <div>

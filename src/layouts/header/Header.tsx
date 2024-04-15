@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 
 import { navMenuItems } from "@constants/navMenuItems";
 
-import SearchContainer from "@components/SearchContainer";
-
-import LanguageIcon from "@assets/icons/LanguageIcon";
-import SearchIcon from "@assets/icons/SearchIcon";
 import logo from "@assets/images/logo.png";
+import SearchIcon from "@assets/icons/SearchIcon";
+import LanguageIcon from "@assets/icons/LanguageIcon";
 import HambergerMenuIcon from "@assets/icons/HambergerMenuIcon";
-import SubMenu from "@components/SubMenu";
-import MenuLabel from "@components/MenuLabel";
+import SubMenu from "@components/HeaderSubMenu";
 import XIcone from "@assets/icons/XIcone";
-import LocationContainer from "@components/LocationContainer";
+import MenuLabel from "@components/HeaderMenu";
+import SearchModal from "@components/SearchModal";
+import LocationModal from "@components/LocationModal";
 
 const Header = () => {
   const [tab, setTab] = useState("");
@@ -109,13 +108,11 @@ const Header = () => {
           </div>
         </nav>
         <MenuLabel isOpen={isOpen} />
-        {isSearching && (
-          <SearchContainer
-            isSearching={isSearching}
-            setIsSearching={setIsSearching}
-          />
-        )}
-        <LocationContainer
+        <SearchModal
+          isSearching={isSearching}
+          setIsSearching={setIsSearching}
+        />
+        <LocationModal
           isClicked={isClicked}
           setIsClicked={setIsClicked}
           setChangeLocation={setChangeLocation}

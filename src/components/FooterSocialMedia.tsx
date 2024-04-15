@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
+import { socialMedia } from "@constants/SocialMedia";
+
 import LocationIcon from "@assets/icons/LocationIcon";
 import PhoneIcon from "@assets/icons/PhoneIcon";
-import { socialMedia } from "@constants/SocialMedia";
-import { Link } from "react-router-dom";
 
 const SocialMedia = () => {
   return (

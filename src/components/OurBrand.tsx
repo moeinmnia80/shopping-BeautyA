@@ -6,7 +6,10 @@ const OurBrand = () => {
       <section className="lg:container px-0 sm:px-8 my-14">
         <div className="relative flex flex-col-reverse md:flex-row md:bg-primary-750">
           <div className="flex flex-col items-start justify-center gap-3 text-white px-8 md:pl-24 md:py-8 md:pr-10">
-            <h3 className="our-brand__title absolute top-12 left-1/2 -translate-x-1/2 md:relative md:top-0 md:left-0 md:translate-x-0">
+            <h3
+              className={`our-brand__title absolute top-12 left-1/2 -translate-x-1/2
+              md:relative md:top-0 md:left-0 md:translate-x-0`}
+            >
               Our Brand
             </h3>
             <p className="our-brand__text text-black md:text-white md:font-light mt-32 md:mt-0">

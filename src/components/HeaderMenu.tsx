@@ -1,9 +1,9 @@
 import { FC, MouseEvent, useState } from "react";
 
 import rightArrow from "@assets/images/rightArrow.png";
-import WomenSkincare from "@components/ui/WomenSkincare";
+import MobileMenu from "@components/ui/MobileMenu";
 
-const MenuLabel: FC<{ isOpen: boolean }> = ({ isOpen }) => {
+const Menu: FC<{ isOpen: boolean }> = ({ isOpen }) => {
   const [isShow, setIsShow] = useState(false);
   const [whichTab, setWhichTab] = useState("");
 
@@ -49,11 +49,11 @@ const MenuLabel: FC<{ isOpen: boolean }> = ({ isOpen }) => {
           <li className="menu-label__items">our brand</li>
         </ul>
         {whichTab === "women skincare" && (
-          <WomenSkincare isShow={isShow} setIsShow={setIsShow} />
+          <MobileMenu isShow={isShow} setIsShow={setIsShow} />
         )}
       </section>
     </>
   );
 };
 
-export default MenuLabel;
+export default Menu;

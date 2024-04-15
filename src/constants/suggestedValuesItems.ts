@@ -10,7 +10,7 @@ type valuePropositionsProps = {
   text: string;
 };
 
-export const valuePropositions: valuePropositionsProps[] = [
+export const suggestedValues: valuePropositionsProps[] = [
   { id: 0, src: img1, alt: "value", text: "No tests on animals" },
   { id: 1, src: img2, alt: "value", text: "No animal-derived ingredients" },
   { id: 2, src: img3, alt: "value", text: "No gluten, or gluten byproducts" },
