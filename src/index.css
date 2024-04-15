@@ -26,6 +26,9 @@
 .search-container__products-item p {
   font-size: clamp(13px, 1vmax, 14px);
 }
+.location-modal__title {
+  font-size: clamp(15px, 1vmax, 20px);
+}
 /*!    Banner    */
 .swiper {
   width: 100%;

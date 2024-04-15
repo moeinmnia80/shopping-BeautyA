@@ -12,6 +12,7 @@ import XIcone from "@assets/icons/XIcone";
 import MenuLabel from "@components/HeaderMenu";
 import SearchModal from "@components/SearchModal";
 import LocationModal from "@components/LocationModal";
+import LocationType from "src/types/Location";
 
 const Header = () => {
   const [tab, setTab] = useState("");
@@ -19,10 +20,9 @@ const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const [changeLocation, setChangeLocation] = useState<{
-    region: string;
-    language: string;
-  } | null>(null);
+  const [changeLocation, setChangeLocation] = useState<LocationType | null>(
+    null
+  );
 
   useEffect(() => {
     isHover && document.body.classList.add(`overflow-hidden`);
@@ -115,6 +115,7 @@ const Header = () => {
         <LocationModal
           isClicked={isClicked}
           setIsClicked={setIsClicked}
+          changeLocation={changeLocation}
           setChangeLocation={setChangeLocation}
         />
       </section>
