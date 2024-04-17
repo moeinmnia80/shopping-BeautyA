@@ -37,7 +37,7 @@ const Header = () => {
     <>
       <section
         className={`sticky top-0 flex items-center justify-center w-full h-20 lg:h-24 \
-         bg-background border-b-1  border-Gray-DFDFDF overflow-hidden z-50`}
+         bg-white border-b-1  border-Gray-DFDFDF overflow-hidden z-50`}
       >
         <nav className="lg:container flex justify-between items-end w-full h-full px-8">
           <div className="md:hidden flex w-1/4 z-10 py-5">
@@ -71,7 +71,7 @@ const Header = () => {
           <ul className="relative hidden md:flex items-end justify-center gap-x-14 h-full font-medium px-2">
             {navMenuItems.map((item) => (
               <Link
-                to={"/"}
+                to={item.link}
                 key={item.id}
                 className={`group flex items-end h-full header-list-text text-nowrap \
                 hover:text-primary-500 duration-300 py-4 ${

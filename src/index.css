@@ -234,17 +234,17 @@
   margin-right: 8px;
   height: 20px;
   width: 20px;
-  border: 2px solid #cbcbcb;
+  border: 1px solid #cbcbcb;
 }
 .about-us__label .custome-checkbox::after {
   content: "";
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
   border-radius: 2px;
   background-color: transparent;
-  top: 4px;
-  left: 4px;
+  top: 2px;
+  left: 2px;
   position: absolute;
 }
 
