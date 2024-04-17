@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import XIcone from "@assets/icons/XIcone";
 import Select from "@components/ui/Select";
@@ -18,6 +18,16 @@ const LocationModal: FC<LocationModalProps> = ({
   changeLocation,
   setChangeLocation,
 }) => {
+  const [newLocation, setNewLocation] = useState<LocationType>(changeLocation);
+
+  const cancleRecordLocationData = () => {
+    setIsClicked(false);
+    setNewLocation(changeLocation);
+  };
+  const recordLocationData = () => {
+    setChangeLocation(newLocation);
+    setIsClicked(false);
+  };
   return (
     <>
       <section
@@ -42,24 +52,32 @@ const LocationModal: FC<LocationModalProps> = ({
         <Select
           data={locationInput.region}
           name={`region`}
-          changeLocation={changeLocation}
-          setChangeLocation={setChangeLocation}
+          newLocation={newLocation}
+          setNewLocation={setNewLocation}
         />
         <Select
           data={locationInput.language}
           name={`language`}
-          changeLocation={changeLocation}
-          setChangeLocation={setChangeLocation}
+          newLocation={newLocation}
+          setNewLocation={setNewLocation}
         />
         <Select
           data={locationInput.currency}
           name={`currency`}
-          changeLocation={changeLocation}
-          setChangeLocation={setChangeLocation}
+          newLocation={newLocation}
+          setNewLocation={setNewLocation}
         />
         <div className="flex gap-4">
-          <button className="w-full font-light">Cancle</button>
-          <button className="w-full font-light text-white bg-primary-500 py-2">
+          <button
+            className="w-full font-light"
+            onClick={cancleRecordLocationData}
+          >
+            Cancle
+          </button>
+          <button
+            className="w-full font-light text-white bg-primary-500 py-2"
+            onClick={recordLocationData}
+          >
             Save
           </button>
         </div>

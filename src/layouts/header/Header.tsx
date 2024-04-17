@@ -20,9 +20,11 @@ const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const [changeLocation, setChangeLocation] = useState<LocationType | null>(
-    null
-  );
+  const [changeLocation, setChangeLocation] = useState<LocationType>({
+    region: "US",
+    language: "EN",
+    currency: "USD",
+  });
 
   useEffect(() => {
     isHover && document.body.classList.add(`overflow-hidden`);
@@ -93,17 +95,19 @@ const Header = () => {
               onMouseEnter={() => setIsSearching((prev) => !prev)}
             />
             <span className="hidden lg:flex w-px h-5 bg-Gray-868686 mx-2" />
-            <LanguageIcon
-              style="w-5 h-5 cursor-pointer"
+            <div
+              className="flex items-center cursor-pointer"
               onClick={() => setIsClicked((prev) => !prev)}
-            />
-            <div className="flex items-end ml-1.5">
-              <p className="relative -bottom-[2px] text-sm md:text-[1rem] ">
-                {changeLocation?.region || "US"}
-              </p>
-              <span className="relative inline-block text-xs text-Gray-606060 ml-1">
-                {changeLocation?.language || "(EN)"}
-              </span>
+            >
+              <LanguageIcon style="w-5 h-5" />
+              <div className="flex items-end ml-1.5">
+                <p className="relative -bottom-[2px] text-sm md:text-[1rem] ">
+                  {changeLocation?.region}
+                </p>
+                <span className="relative inline-block text-xs text-Gray-606060 ml-1">
+                  {`(${changeLocation?.language})`}
+                </span>
+              </div>
             </div>
           </div>
         </nav>
