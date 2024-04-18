@@ -92,7 +92,7 @@ const Header = () => {
           <div className="flex items-center w-1/4 md:w-max justify-end py-5">
             <SearchIcon
               style="w-5 h-5 hidden lg:inline-block cursor-pointer"
-              onMouseEnter={() => setIsSearching((prev) => !prev)}
+              onClick={() => setIsSearching((prev) => !prev)}
             />
             <span className="hidden lg:flex w-px h-5 bg-Gray-868686 mx-2" />
             <div

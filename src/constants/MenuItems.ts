@@ -3,6 +3,12 @@ type menuItemType = {
   category: { id: number; text: string }[];
   skinCondition: { id: number; text: string }[];
   collection: { id: number; text: string }[];
+  price: {
+    id: number;
+    text: string;
+    beginingRange: string;
+    endRange: string;
+  }[];
 };
 export const menuItems: menuItemType = {
   special: [
@@ -43,5 +49,37 @@ export const menuItems: menuItemType = {
     { id: 5, text: "one essential" },
     { id: 6, text: "professional solution" },
     { id: 7, text: "beautya hydra life" },
+  ],
+  price: [
+    {
+      id: 0,
+      text: "$50.00 - $150.00",
+      beginingRange: "50.00",
+      endRange: "150.00",
+    },
+    {
+      id: 1,
+      text: "$150.00 - $250.00",
+      beginingRange: "150.00",
+      endRange: "250.00",
+    },
+    {
+      id: 2,
+      text: "$250.00 - $350.00",
+      beginingRange: "250.00",
+      endRange: "350.00",
+    },
+    {
+      id: 3,
+      text: "$350.00 - $450.00",
+      beginingRange: "350.00",
+      endRange: "450.00",
+    },
+    {
+      id: 4,
+      text: "$450.00 - $550.00",
+      beginingRange: "450.00",
+      endRange: "550.00",
+    },
   ],
 };

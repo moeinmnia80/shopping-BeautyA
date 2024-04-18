@@ -58,8 +58,9 @@ const AboutUs = () => {
               />
               <CheckBox
                 htmlFor="1"
-                labelClassName="inline-flex sm:hidden items-start about-us__label about-us__text font-extralight select-none"
-                setIsAcceptPolicy={setIsAcceptPolicy}
+                labelClassName="inline-flex sm:hidden items-start about-us__text font-extralight select-none"
+                onClick={() => setIsAcceptPolicy((prev) => !prev)}
+                name="policy"
               >
                 I agree to Beautya’s Terms and Conditions and Privacy and
                 Policy.
@@ -77,7 +78,8 @@ const AboutUs = () => {
               htmlFor="2"
               labelClassName={`hidden sm:inline-flex items-start about-us__label about-us__text \ 
               font-extralight select-none mt-3 cursor-pointer`}
-              setIsAcceptPolicy={setIsAcceptPolicy}
+              onClick={() => setIsAcceptPolicy((prev) => !prev)}
+              name="policy"
             >
               By submitting your email, you agree to receive advertising emails
               from Beautya. Please review our Privacy Policy, which includes our

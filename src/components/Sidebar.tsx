@@ -1,6 +1,6 @@
 import { ComponentProps, FC } from "react";
 
-import Filters from "@components/ui/Filters";
+import Filters from "@components/Filters";
 
 type SidebarProps = {} & ComponentProps<"div">;
 

@@ -206,7 +206,7 @@
 .about-us__text {
   font-size: clamp(14px, 0.7vmax, 14px);
 }
-.about-us__label input[type="checkbox"] {
+.check-box__input {
   position: absolute;
   clip-path: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -220,13 +220,13 @@
   display: flex;
   align-items: center;
 }
-.about-us__label input[type="checkbox"]:checked + .custome-checkbox::before {
+.check-box__input:checked + .custome-checkbox::before {
   border-color: #0c0c0c;
 }
-.about-us__label input[type="checkbox"]:checked + .custome-checkbox::after {
+.check-box__input:checked + .custome-checkbox::after {
   background-color: #0c0c0c;
 }
-.about-us__label .custome-checkbox::before {
+.check-box__label .custome-checkbox::before {
   content: "";
   display: inline-block;
   border-radius: 3px;
@@ -236,7 +236,7 @@
   width: 20px;
   border: 1px solid #cbcbcb;
 }
-.about-us__label .custome-checkbox::after {
+.check-box__label .custome-checkbox::after {
   content: "";
   display: inline-block;
   height: 16px;
@@ -258,5 +258,9 @@
 @layer components {
   .menu-label__items {
     @apply w-full bg-white font-bold capitalize border-t-1 border-b-1 border-Gray-DFDFDF py-3 pl-1 pr-3;
+  }
+  /* filters */
+  .filter-applied__items--label {
+    @apply flex items-center cursor-pointer capitalize text-sm hover:text-primary-500;
   }
 }

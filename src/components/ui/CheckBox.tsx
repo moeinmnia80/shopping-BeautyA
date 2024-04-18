@@ -1,29 +1,29 @@
-import { Dispatch, FC, ReactNode } from "react";
+import { ComponentProps, FC } from "react";
 
 type CheckBoxProps = {
   container?: string;
   htmlFor: string;
   labelClassName: string;
   inputClassName?: string;
-  children: ReactNode;
-  setIsAcceptPolicy: Dispatch<React.SetStateAction<boolean>>;
-};
+} & ComponentProps<"input">;
+
 const CheckBox: FC<CheckBoxProps> = ({
   container,
   htmlFor,
   labelClassName,
   inputClassName,
-  setIsAcceptPolicy,
+  onClick,
   children,
+  ...props
 }) => {
   return (
     <div className={`${container}`}>
-      <label htmlFor={htmlFor} className={labelClassName}>
+      <label htmlFor={htmlFor} className={`check-box__label ${labelClassName}`}>
         <input
           type="checkbox"
           id={htmlFor}
-          className={`${inputClassName}`}
-          onClick={() => setIsAcceptPolicy((prev) => !prev)}
+          className={`check-box__input ${inputClassName}`}
+          {...props}
         />
         <span className="custome-checkbox"></span>
         {children}
