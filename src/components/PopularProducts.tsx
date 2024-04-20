@@ -14,9 +14,16 @@ const PopularProducts = () => {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-6">
-          {popularProducts.map((item) => (
-            <ProductCart key={item.id} data={item} />
-          ))}
+          {popularProducts.map(
+            (item: {
+              id: number;
+              img: string;
+              title: string;
+              text: string;
+            }) => (
+              <ProductCart key={item.id} data={item} />
+            )
+          )}
         </div>
       </div>
     </>
