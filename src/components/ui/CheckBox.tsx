@@ -12,7 +12,6 @@ const CheckBox: FC<CheckBoxProps> = ({
   htmlFor,
   labelClassName,
   inputClassName,
-  onClick,
   children,
   ...props
 }) => {

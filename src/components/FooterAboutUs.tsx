@@ -53,7 +53,7 @@ const AboutUs = () => {
               <input
                 type="text"
                 placeholder="Email Address"
-                className={`w-full p-2 bg-transparent border-b-2 border-Gray-CBCBCB placeholder:text-sm\ 
+                className={`w-full p-2 bg-transparent border-b-2 border-Gray-CBCBCB placeholder:text-sm \
                 placeholder:font-extralight placeholder:text-Gray-CBCBCB outline-none`}
               />
               <CheckBox
@@ -76,7 +76,7 @@ const AboutUs = () => {
             </form>
             <CheckBox
               htmlFor="2"
-              labelClassName={`hidden sm:inline-flex items-start about-us__label about-us__text \ 
+              labelClassName={`hidden sm:inline-flex items-start about-us__label about-us__text \
               font-extralight select-none mt-3 cursor-pointer`}
               onClick={() => setIsAcceptPolicy((prev) => !prev)}
               name="policy"

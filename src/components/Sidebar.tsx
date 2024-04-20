@@ -2,7 +2,7 @@ import { ComponentProps, FC } from "react";
 
 import Filters from "@components/Filters";
 
-type SidebarProps = {} & ComponentProps<"div">;
+type SidebarProps = ComponentProps<"div">;
 
 const Sidebar: FC<SidebarProps> = ({ ...props }) => {
   return (

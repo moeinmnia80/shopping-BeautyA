@@ -1,8 +1,6 @@
 import { FC, useState } from "react";
 
-type ToggleButtonProps = {};
-
-const ToggleButton: FC<ToggleButtonProps> = () => {
+const ToggleButton: FC = () => {
   const [isClicked, setIsClicked] = useState(true);
   return (
     <>
