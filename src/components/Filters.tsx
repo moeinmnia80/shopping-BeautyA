@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 
-import ToggleButton from "@ui/ToggleButton";
-import { menuItems } from "@constants/MenuItems";
-import CheckBox from "@ui/CheckBox";
-import Accordion from "@ui/Accordion";
 import XIcone from "@assets/icons/XIcone";
+import CheckBox from "@components/ui/CheckBox";
+import { menuItems } from "@constants/MenuItems";
+import Accordion from "@components/ui/Accordion";
+import ToggleButton from "@components/ui/ToggleButton";
 
 type FiltersProps = {};
 

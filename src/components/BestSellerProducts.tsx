@@ -6,8 +6,9 @@ import { Pagination, Navigation } from "swiper/modules";
 import { GET_PRODUCTS } from "@graphql/queries";
 
 import "swiper/css/navigation";
-import SwiperWrapper from "./ui/SwiperWrapper";
-import SkeletonLoader from "./ui/SkeletonLoader";
+
+import SwiperWrapper from "@components/ui/SwiperWrapper";
+import SkeletonLoader from "@components/ui/SkeletonLoader";
 
 type Products = {
   title: string;

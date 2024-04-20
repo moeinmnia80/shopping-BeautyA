@@ -7,8 +7,8 @@ import "swiper/css/navigation";
 
 import newInBanner from "@assets/images/newInBanner.png";
 import { GET_NEW_PRODUCTS } from "@graphql/queries";
-import SwiperWrapper from "@ui/SwiperWrapper";
-import SkeletonLoader from "@ui/SkeletonLoader";
+import SwiperWrapper from "@components/ui/SwiperWrapper";
+import SkeletonLoader from "@components/ui/SkeletonLoader";
 
 type NewProducts = {
   title: string;

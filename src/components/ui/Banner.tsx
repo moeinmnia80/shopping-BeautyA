@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 
 import { bannerGroup } from "@constants/bannerGroup";
-import SwiperWrapper from "@ui/SwiperWrapper";
+import SwiperWrapper from "@components/ui/SwiperWrapper";
 
 const Banner: FC = () => {
   return (
