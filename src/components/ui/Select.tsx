@@ -1,22 +1,13 @@
 import { FC, SetStateAction } from "react";
 
 import { countries } from "@constants/counteries";
+import LocationType from "src/types/Location";
 
 type selectProps = {
   data: { id: string; label: string; name: string };
   name: "region" | "language" | "currency";
-  newLocation: {
-    region: string;
-    language: string;
-    currency: string;
-  };
-  setNewLocation: (
-    value: SetStateAction<{
-      region: string;
-      language: string;
-      currency: string;
-    }>
-  ) => void;
+  newLocation: LocationType;
+  setNewLocation: (value: SetStateAction<LocationType>) => void;
 };
 
 const Select: FC<selectProps> = ({
@@ -33,16 +24,10 @@ const Select: FC<selectProps> = ({
           name={data.name}
           className="h-full text-Gray-606060 border-b-1 border-Gray-606060 outline-none"
           onChange={(event) =>
-            setNewLocation(
-              (prev: {
-                region: string;
-                language: string;
-                currency: string;
-              }) => ({
-                ...prev,
-                [name]: event.target.value,
-              })
-            )
+            setNewLocation((prev: LocationType) => ({
+              ...prev,
+              [name]: event.target.value,
+            }))
           }
           value={newLocation[`${name}`]}
         >
