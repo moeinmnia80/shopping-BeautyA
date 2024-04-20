@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SetStateAction } from "react";
 
 import { countries } from "@constants/counteries";
 import LocationType from "src/types/Location";
@@ -7,7 +7,7 @@ type selectProps = {
   data: { id: string; label: string; name: string };
   name: "region" | "language" | "currency";
   newLocation: LocationType;
-  setNewLocation: (value: any) => void;
+  setNewLocation: (value: SetStateAction<LocationType>) => void;
 };
 
 const Select: FC<selectProps> = ({
