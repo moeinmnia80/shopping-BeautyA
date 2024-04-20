@@ -3,13 +3,20 @@ import { FC, useState } from "react";
 import XIcone from "@assets/icons/XIcone";
 import Select from "@components/ui/Select";
 import { locationInput } from "@constants/locationInput";
-import LocationType from "src/types/Location";
 
 type LocationModalProps = {
   isClicked: boolean;
   setIsClicked: (value: boolean) => void;
-  changeLocation: LocationType;
-  setChangeLocation: (value: LocationType) => void;
+  changeLocation: {
+    region: string;
+    language: string;
+    currency: string;
+  };
+  setChangeLocation: (value: {
+    region: string;
+    language: string;
+    currency: string;
+  }) => void;
 };
 
 const LocationModal: FC<LocationModalProps> = ({
@@ -18,7 +25,11 @@ const LocationModal: FC<LocationModalProps> = ({
   changeLocation,
   setChangeLocation,
 }) => {
-  const [newLocation, setNewLocation] = useState<LocationType>(changeLocation);
+  const [newLocation, setNewLocation] = useState<{
+    region: string;
+    language: string;
+    currency: string;
+  }>(changeLocation);
 
   const cancleRecordLocationData = () => {
     setIsClicked(false);

@@ -12,7 +12,6 @@ import XIcone from "@assets/icons/XIcone";
 import MenuLabel from "@components/HeaderMenu";
 import SearchModal from "@components/SearchModal";
 import LocationModal from "@components/LocationModal";
-import LocationType from "src/types/Location";
 
 const Header = () => {
   const [tab, setTab] = useState("");
@@ -20,7 +19,11 @@ const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const [changeLocation, setChangeLocation] = useState<LocationType>({
+  const [changeLocation, setChangeLocation] = useState<{
+    region: string;
+    language: string;
+    currency: string;
+  }>({
     region: "US",
     language: "EN",
     currency: "USD",
