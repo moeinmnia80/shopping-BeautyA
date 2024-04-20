@@ -10,7 +10,7 @@ type PopularProductsType = {
   text: string;
 };
 
-export const popularProducts: PopularProductsType[] = [
+const popularProducts: PopularProductsType[] = [
   {
     id: 0,
     img: img1,
@@ -36,3 +36,5 @@ export const popularProducts: PopularProductsType[] = [
     text: "Plumping Gloss - Instant and Long-Term Volume Effect - 24h Hydration",
   },
 ];
+
+export default popularProducts;

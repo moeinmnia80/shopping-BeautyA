@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ProductCart from "@components/ui/ProductCart";
-import { popularProducts } from "@constants/popularProducts";
+import popularProducts from "@constants/popularProducts";
 
 const PopularProducts = () => {
   return (
