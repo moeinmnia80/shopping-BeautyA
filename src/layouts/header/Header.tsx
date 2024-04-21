@@ -62,11 +62,13 @@ const Header = () => {
             onClick={() => setTab("")}
           >
             <span className="absolute -top-2 -right-2 w-44 h-44 bg-primary-50 rounded-full blur-2xl" />
-            <img
-              src={logo}
-              alt="beautya"
-              className="relative w-full h-full object-contain select-none cursor-pointer"
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="beautya"
+                className="relative w-full h-full object-contain select-none cursor-pointer"
+              />
+            </Link>
           </div>
           <ul className="relative hidden md:flex items-end justify-center gap-x-14 h-full font-medium px-2">
             {navMenuItems.map((item) => (

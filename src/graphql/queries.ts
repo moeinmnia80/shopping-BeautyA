@@ -45,3 +45,17 @@ export const GET_BLOGS = gql`
     }
   }
 `;
+
+export const GET_SKINCARE_PRODUCTS = gql`
+  query {
+    skincareProducts {
+      picture {
+        url
+      }
+      title
+      description
+      price
+      slug
+    }
+  }
+`;

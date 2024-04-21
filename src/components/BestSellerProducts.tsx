@@ -50,7 +50,6 @@ const BestSellerProduucts: FC = () => {
             isOutSide={true}
             isDarkArrow={true}
             spaceBetween={15}
-            loop={true}
             breakpoints={BREAK_POINT}
             modules={[Pagination, Navigation]}
             prevButtonStyle={`hidden md:flex items-center justify-center absolute top-1/2 -translate-y-1/2 left-0 \

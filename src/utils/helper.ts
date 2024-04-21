@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const changeDate = (date: string) => {
   const NEW_DATE = new Date(date);
   const YEAR = NEW_DATE.toLocaleDateString("en-us", { year: "numeric" });
@@ -8,4 +11,12 @@ const changeDate = (date: string) => {
   }).concat(", ", YEAR)}`;
 };
 
-export { changeDate };
+const scrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+};
+
+export { changeDate, scrollToTop };

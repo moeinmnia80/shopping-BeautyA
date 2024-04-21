@@ -8,7 +8,7 @@ const Sidebar: FC<SidebarProps> = ({ ...props }) => {
   return (
     <>
       <div {...props}>
-        <h4 className="text-xl font-bold">Filters</h4>
+        <h4 className="flex items-center text-xl font-bold h-8">Filters</h4>
         <Filters />
       </div>
     </>

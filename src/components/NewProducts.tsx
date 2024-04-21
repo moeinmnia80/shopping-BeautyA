@@ -44,7 +44,7 @@ const NewProducts: FC = () => {
             prevButtonStyle={`hidden ${
               isClicked ? `md:flex items-center justify-center` : ``
             } absolute top-1/2 -translate-y-1/2 left-0 \
-           translate-x-3 w-10 h-10 cursor-pointer border-1 border-Gray-DFDFDF z-10`}
+           translate-x-3 w-10 h-10 cursor-pointer bg-white border-1 border-Gray-DFDFDF z-10`}
             nextButtonStyle={`hidden md:flex items-center justify-center absolute right-0 -translate-x-3 top-1/2 
             -translate-y-1/2 w-10 h-10 cursor-pointer bg-white border-1 border-Gray-DFDFDF z-10`}
             className="swiper-new-product w-full h-!max"
