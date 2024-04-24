@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import ProductsType from "src/types/Products";
 
 const changeDate = (date: string) => {
   const NEW_DATE = new Date(date);
@@ -26,4 +28,18 @@ const hideOverflow = (isActive: boolean) => {
   }, [isActive]);
 };
 
-export { changeDate, scrollToTop, hideOverflow };
+const sortProductHandler = (
+  event: ChangeEvent<HTMLSelectElement>,
+  products: ProductsType[],
+  mainData: ProductsType[]
+) => {
+  switch (event.target.value) {
+    case "expensive":
+      return [...products.sort((a, b) => +b.price - +a.price)];
+    case "cheap":
+      return [...products.sort((a, b) => +a.price - +b.price)];
+    default:
+      return [...mainData];
+  }
+};
+export { changeDate, scrollToTop, hideOverflow, sortProductHandler };

@@ -10,6 +10,7 @@ export const popularProducts: ProductsType[] = [
     id: 0,
     picture: { url: img1 },
     title: "Beautya Prestige la Mousse Micellaire",
+    price: "",
     description:
       "Plumping Gloss - Instant and Long-Term Volume Effect - 24h Hydration",
   },
@@ -17,6 +18,7 @@ export const popularProducts: ProductsType[] = [
     id: 4,
     picture: { url: img2 },
     title: "Beautya Prestige la Mousse Micellaire",
+    price: "",
     description:
       "Plumping Gloss - Instant and Long-Term Volume Effect - 24h Hydration",
   },
@@ -24,6 +26,7 @@ export const popularProducts: ProductsType[] = [
     id: 2,
     picture: { url: img3 },
     title: "Beautya Prestige la Mousse Micellaire",
+    price: "",
     description:
       "Plumping Gloss - Instant and Long-Term Volume Effect - 24h Hydration",
   },
@@ -31,6 +34,7 @@ export const popularProducts: ProductsType[] = [
     id: 3,
     picture: { url: img4 },
     title: "Beautya Prestige la Mousse Micellaire",
+    price: "",
     description:
       "Plumping Gloss - Instant and Long-Term Volume Effect - 24h Hydration",
   },
