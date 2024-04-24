@@ -53,6 +53,7 @@ const AboutUs = () => {
               <input
                 type="text"
                 placeholder="Email Address"
+                name="email"
                 className={`w-full p-2 bg-transparent border-b-2 border-Gray-CBCBCB placeholder:text-sm \
                 placeholder:font-extralight placeholder:text-Gray-CBCBCB outline-none`}
               />

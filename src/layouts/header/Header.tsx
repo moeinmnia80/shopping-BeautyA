@@ -113,7 +113,7 @@ const Header = () => {
             </div>
           </div>
         </nav>
-        <MenuLabel isOpen={isOpen} />
+        <MenuLabel isOpen={isOpen} setIsOpen={setIsOpen} />
         <SearchModal
           isSearching={isSearching}
           setIsSearching={setIsSearching}

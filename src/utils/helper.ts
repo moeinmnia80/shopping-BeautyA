@@ -19,4 +19,11 @@ const scrollToTop = () => {
   }, [pathname]);
 };
 
-export { changeDate, scrollToTop };
+const hideOverflow = (isActive: boolean) => {
+  useEffect(() => {
+    isActive && document.body.classList.add("overflow-hidden");
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isActive]);
+};
+
+export { changeDate, scrollToTop, hideOverflow };

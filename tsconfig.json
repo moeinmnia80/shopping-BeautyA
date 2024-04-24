@@ -27,6 +27,7 @@
       "@configs/*": ["src/configs/*"],
       "@constants/*": ["src/constants/*"],
       "@graphql/*": ["src/graphql/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],

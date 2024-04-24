@@ -4,6 +4,8 @@ import XIcone from "@assets/icons/XIcone";
 import Select from "@components/ui/Select";
 import { locationInput } from "@constants/locationInput";
 import LocationType from "src/types/Location";
+import { countries } from "@constants/counteries";
+import { hideOverflow } from "@utils/helper";
 
 type LocationModalProps = {
   isClicked: boolean;
@@ -19,6 +21,8 @@ const LocationModal: FC<LocationModalProps> = ({
   setChangeLocation,
 }) => {
   const [newLocation, setNewLocation] = useState<LocationType>(changeLocation);
+
+  hideOverflow(isClicked);
 
   const cancleRecordLocationData = () => {
     setIsClicked(false);
@@ -49,24 +53,42 @@ const LocationModal: FC<LocationModalProps> = ({
             onClick={() => setIsClicked(false)}
           />
         </div>
-        <Select
-          data={locationInput.region}
-          name={`region`}
-          newLocation={newLocation}
-          setNewLocation={setNewLocation}
-        />
-        <Select
-          data={locationInput.language}
-          name={`language`}
-          newLocation={newLocation}
-          setNewLocation={setNewLocation}
-        />
-        <Select
-          data={locationInput.currency}
-          name={`currency`}
-          newLocation={newLocation}
-          setNewLocation={setNewLocation}
-        />
+        {locationInput.map((item) => (
+          <Select
+            key={item.id}
+            label={item.label}
+            labelClassName="relative flex flex-col h-16"
+            name={item.name}
+            className="h-full text-Gray-606060 border-b-1 border-Gray-606060 outline-none"
+            onChange={(event) =>
+              setNewLocation((prev: LocationType) => ({
+                ...prev,
+                [item.name]: event.target.value,
+              }))
+            }
+            value={newLocation[`${item.name}`]}
+          >
+            {countries.map((country, index) => (
+              <option
+                key={index}
+                className="flex h-20"
+                value={
+                  item.name === "region"
+                    ? `${country.code}`
+                    : item.name === "language"
+                    ? `${country[item.name].code?.toUpperCase()}`
+                    : country[item.name].code
+                }
+              >
+                {item.name === "region"
+                  ? `${country.name}`
+                  : item.name === "language"
+                  ? `${country[item.name].name}`
+                  : `${country.currency.symbol} (${country.currency.code})`}
+              </option>
+            ))}
+          </Select>
+        ))}
         <div className="flex gap-4">
           <button
             className="w-full font-light"

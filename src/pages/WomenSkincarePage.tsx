@@ -29,9 +29,13 @@ const WomenSkincarePage = () => {
             ({`${data?.skincareProducts.length || 0}`})
           </span>
         </div>
-        <div className="flex gap-5 w-full">
-          <Sidebar className="flex flex-col w-1/5" />
-          <SkincareProducts className="w-4/5" />
+        <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 gap-5 w-full">
+          <Sidebar
+            className={`hidden lg:flex flex-col w-full
+            lg:col-start-1 lg:col-end-2 
+            `}
+          />
+          <SkincareProducts className="flex flex-col w-full lg:col-start-2 lg:col-span-3 xl:col-span-4" />
         </div>
       </section>
     </>

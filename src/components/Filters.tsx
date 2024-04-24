@@ -22,7 +22,7 @@ const Filters: FC<FiltersProps> = () => {
   };
   return (
     <>
-      <div className="w-full mt-3">
+      <div className="w-full mt-5">
         {!!filters.length && (
           <div className="flex flex-col gap-2 bg-white border-t-1 border-Gray-DFDFDF p-3">
             <h4 className="text-sm font-bold">Applied Filters</h4>
