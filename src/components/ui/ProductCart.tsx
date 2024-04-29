@@ -5,13 +5,14 @@ import ProductsType from "src/types/Products";
 
 type ProductCartProps = {
   data: ProductsType;
+  link?: string;
 };
 
-const ProductCart: FC<ProductCartProps> = ({ data }) => {
+const ProductCart: FC<ProductCartProps> = ({ data, link }) => {
   return (
     <>
       <Link
-        to={`/`}
+        to={link || "/"}
         className="search-container__products-item flex flex-col w-full h-full border-1 border-Gray-DFDFDF cursor-pointer overflow-hidden"
       >
         <img

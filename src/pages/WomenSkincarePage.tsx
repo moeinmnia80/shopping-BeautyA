@@ -34,18 +34,18 @@ const WomenSkincarePage = () => {
             ({`${data?.skincareProducts.length || 0}`})
           </span>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 gap-5 w-full h-full">
           <Sidebar
             className={
               isOpen
                 ? "flex lg:hidden flex-col fixed top-0 left-0 w-full h-dvh bg-white z-50 px-8 pt-10"
-                : `hidden lg:flex flex-col w-full
+                : `sticky top-0 hidden lg:flex flex-col w-full
                 lg:col-start-1 lg:col-end-2`
             }
             setIsOpen={setIsOpen}
           />
           <SkincareProducts
-            className="flex flex-col w-full lg:col-start-2 lg:col-span-3 xl:col-span-4 2xl:col-span-5"
+            className="flex flex-col w-full lg:col-start-2 lg:col-span-3 xl:col-span-4"
             setIsOpen={setIsOpen}
           />
         </div>

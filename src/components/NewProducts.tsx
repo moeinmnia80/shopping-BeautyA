@@ -32,10 +32,10 @@ const NewProducts: FC = () => {
     <>
       <section className="flex flex-col items-center h-max bg-primary-750 py-10 my-14 ">
         <h3 className="new-product__title text-white font-bold mb-6">New In</h3>
-        <div className="container relative w-full px-8">
+        <div className="">
           <SwiperWrapper
-            isOutSide={true}
-            isDarkArrow={true}
+            isOutSide
+            isDarkArrow
             slidesPerView={"auto"}
             spaceBetween={15}
             modules={[Pagination, Navigation]}
@@ -47,6 +47,7 @@ const NewProducts: FC = () => {
            translate-x-3 w-10 h-10 cursor-pointer bg-white border-1 border-Gray-DFDFDF z-10`}
             nextButtonStyle={`hidden md:flex items-center justify-center absolute right-0 -translate-x-3 top-1/2 
             -translate-y-1/2 w-10 h-10 cursor-pointer bg-white border-1 border-Gray-DFDFDF z-10`}
+            boxClassName="container relative w-full px-8"
             className="swiper-new-product w-full h-!max"
           >
             <SwiperSlide className="flex flex-col gap-y-5 w-full h-full md:w-2/3 lg:w-1/2">

@@ -48,7 +48,8 @@ const OurBlogs: FC = () => {
           modules={[Pagination, Navigation]}
           prevButtonStyle="hidden"
           nextButtonStyle="hidden"
-          className="our-blog-swiper h-full mt-6"
+          boxClassName="w-full"
+          className="our-blog-swiper w-full h-full mt-6"
         >
           {!loading ? (
             data?.blogs.map((blog) => (

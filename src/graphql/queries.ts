@@ -59,3 +59,20 @@ export const GET_SKINCARE_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_SKINCARE_PRODUCT = gql`
+  query ($slug: String!) {
+    skincareProduct(where: { slug: $slug }) {
+      title
+      description
+      slug
+      price
+      picture {
+        url
+      }
+      type
+      details
+      advantage
+    }
+  }
+`;

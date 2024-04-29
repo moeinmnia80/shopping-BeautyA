@@ -21,7 +21,7 @@ const CheckBox: FC<CheckBoxProps> = ({
         <input
           type="checkbox"
           id={htmlFor}
-          className={`check-box__input ${inputClassName} opacity-0`}
+          className={`check-box__input ${inputClassName}`}
           {...props}
         />
         <span className="custome-checkbox"></span>

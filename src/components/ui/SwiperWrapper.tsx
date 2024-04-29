@@ -8,9 +8,9 @@ import {
 } from "react";
 
 import { Swiper } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/thumbs";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -20,14 +20,16 @@ import lightLeft from "@assets/images/left.png";
 import darkLeft from "@assets/images/leftArrow.png";
 
 type SwiperWrapperProps = {
+  boxClassName?: string;
   children: ReactNode;
-  prevButtonStyle: string;
-  nextButtonStyle: string;
+  prevButtonStyle?: string;
+  nextButtonStyle?: string;
   isOutSide?: boolean;
   isDarkArrow?: boolean;
 } & ComponentPropsWithoutRef<typeof Swiper>;
 
 const SwiperWrapper: FC<SwiperWrapperProps> = ({
+  boxClassName,
   children,
   prevButtonStyle,
   nextButtonStyle,
@@ -45,22 +47,17 @@ const SwiperWrapper: FC<SwiperWrapperProps> = ({
   }, [isUpdateRef]);
 
   return (
-    <>
+    <div className={`relative ${boxClassName}`}>
       {isOutSide && (
-        <div className={prevButtonStyle} ref={navigationPrevRef}>
-          <img src={`${isDarkArrow ? darkLeft : lightLeft}`} alt="prev slide" />
+        <div className={prevButtonStyle || "hidden"} ref={navigationPrevRef}>
+          <img
+            src={`${isDarkArrow ? darkLeft : lightLeft}`}
+            alt="prev slide"
+            className={props.direction === "vertical" ? "rotate-90" : ""}
+          />
         </div>
       )}
       <Swiper
-        speed={props?.speed && 400}
-        spaceBetween={15}
-        centeredSlides={props?.centeredSlides && true}
-        autoplay={
-          props?.autoplay && {
-            delay: 5000,
-            disableOnInteraction: false,
-          }
-        }
         pagination={{
           clickable: true,
         }}
@@ -68,38 +65,39 @@ const SwiperWrapper: FC<SwiperWrapperProps> = ({
           nextEl: navigationNextRef.current,
           prevEl: navigationPrevRef.current,
         }}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
         {...props}
       >
         {!isOutSide && (
-          <div className={prevButtonStyle} ref={navigationPrevRef}>
+          <div className={prevButtonStyle || "hidden"} ref={navigationPrevRef}>
             <img
               src={`${isDarkArrow ? darkLeft : lightLeft}`}
               alt="prev slide"
+              className={props.direction === "vertical" ? "rotate-90" : ""}
             />
           </div>
         )}
         {children}
         {!isOutSide && (
-          <div className={nextButtonStyle} ref={navigationNextRef}>
+          <div className={nextButtonStyle || "hidden"} ref={navigationNextRef}>
             <img
               src={`${isDarkArrow ? darkRight : lightRight}`}
               alt="next slide"
+              className={props.direction === "vertical" ? "rotate-90" : ""}
             />
           </div>
         )}
       </Swiper>
 
       {isOutSide && (
-        <div className={nextButtonStyle} ref={navigationNextRef}>
+        <div className={nextButtonStyle || "hidden"} ref={navigationNextRef}>
           <img
             src={`${isDarkArrow ? darkRight : lightRight}`}
             alt="next slide"
+            className={props.direction === "vertical" ? "rotate-90" : ""}
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

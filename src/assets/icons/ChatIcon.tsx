@@ -1,6 +1,8 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const ChatIcon: FC<{ style: string }> = ({ style }) => {
+type ChatIconProps = ComponentProps<"svg">;
+
+const ChatIcon: FC<ChatIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -9,7 +11,7 @@ const ChatIcon: FC<{ style: string }> = ({ style }) => {
         viewBox="0 0 24 24"
         strokeWidth={1}
         stroke="currentColor"
-        className={style}
+        {...props}
       >
         <path
           strokeLinecap="round"

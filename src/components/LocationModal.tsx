@@ -6,6 +6,7 @@ import { locationInput } from "@constants/locationInput";
 import LocationType from "src/types/Location";
 import { countries } from "@constants/counteries";
 import { hideOverflow } from "@utils/helper";
+import useClickOutside from "@hooks/useClickOutside";
 
 type LocationModalProps = {
   isClicked: boolean;
@@ -21,6 +22,7 @@ const LocationModal: FC<LocationModalProps> = ({
   setChangeLocation,
 }) => {
   const [newLocation, setNewLocation] = useState<LocationType>(changeLocation);
+  const domeNode = useClickOutside<HTMLDivElement>(() => setIsClicked(false));
 
   hideOverflow(isClicked);
 
@@ -43,6 +45,7 @@ const LocationModal: FC<LocationModalProps> = ({
         className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
       ${isClicked ? "flex" : "hidden"}
       flex flex-col justify-between w-full h-full md:w-[60vw] md:h-[60vh] lg:w-[40vw] lg:h-[60vh] xl:w-[30vw] bg-white p-10 z-50`}
+        ref={domeNode}
       >
         <div className="flex items-center justify-between">
           <h5 className="location-modal__title font-bold">

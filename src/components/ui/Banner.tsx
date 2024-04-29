@@ -2,6 +2,8 @@ import { FC } from "react";
 import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 import { bannerGroup } from "@constants/bannerGroup";
 import SwiperWrapper from "@components/ui/SwiperWrapper";
 
@@ -19,6 +21,7 @@ const Banner: FC = () => {
           }}
           prevButtonStyle={`swiper-button-prev absolute top-0 left-0 hidden lg:flex h-[calc(100%-2rem-5px)] w-20 bg-[#00000066] z-20`}
           nextButtonStyle={`swiper-button-next absolute top-0 right-0 hidden lg:flex h-[calc(100%-2rem-5px)] w-20 bg-[#00000066] z-20`}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper h-[70dvh] sm:h-full"
         >
           {bannerGroup.map((banner) => (

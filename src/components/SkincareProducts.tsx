@@ -64,7 +64,7 @@ const SkincareProducts: FC<SkincareProductsProps> = ({
             labelClassName={`relative flex self-end w-full md:w-[calc(100%/3-.75rem)] lg:w-[calc(25%-1rem)] h-full`}
             textStyle="absolute left-2 top-1/2 -translate-y-1/2 text-sm flex font-bold"
             className={`flex items-center justify-center w-full text-xs lg:text-sm font-light 
-            capitalize bg-white border-1 border-Gray-DFDFDF outline-none pl-12 py-1`}
+            capitalize bg-white border-1 border-Gray-DFDFDF outline-none pl-10 md:pl-12 py-1`}
             onChange={(event) =>
               setProducts(
                 sortProductHandler(event, products, data!.skincareProducts)
@@ -89,7 +89,11 @@ const SkincareProducts: FC<SkincareProductsProps> = ({
           ) : (
             <>
               {products.map((item) => (
-                <ProductCart key={item.slug} data={item} />
+                <ProductCart
+                  key={item.slug}
+                  data={item}
+                  link={`/women-skincare/${item.slug}`}
+                />
               ))}
               <img
                 src={skincareADS1}
