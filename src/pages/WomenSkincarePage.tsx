@@ -21,10 +21,13 @@ const WomenSkincarePage = () => {
     <>
       <section className="lg:container flex flex-col gap-4 w-full px-8 py-12">
         <Breadcrumb className="flex items-center gap-2 font-light capitalize">
-          <BreadcrumbItem to={"/"} className="">
+          <BreadcrumbItem to={"/"} className="text__md">
             home
           </BreadcrumbItem>
-          <BreadcrumbItem to={"/women-skincare"} className="font-bold">
+          <BreadcrumbItem
+            to={"/women-skincare"}
+            className=" text__md font-bold"
+          >
             women skincare
           </BreadcrumbItem>
         </Breadcrumb>

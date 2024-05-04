@@ -6,9 +6,24 @@ import XIcon from "@assets/icons/XIcon";
 import ToggleButton from "@ui/ToggleButton";
 import { menuItems } from "@constants/MenuItems";
 
-type FiltersProps = {};
+type AccordionType = {
+  id: "category" | "skinCondition" | "special" | "price";
+  childrenClass: string;
+  title: string;
+};
 
-const Filters: FC<FiltersProps> = () => {
+const Accordions: AccordionType[] = [
+  { id: "category", childrenClass: "h-60", title: "category" },
+  {
+    id: "skinCondition",
+    childrenClass: "h-[10.5rem]",
+    title: "skin condition",
+  },
+  { id: "special", childrenClass: "h-36", title: "featured" },
+  { id: "price", childrenClass: "h-[7.5rem]", title: "price" },
+];
+
+const Filters: FC = () => {
   const [filters, setFilters] = useState<string[]>([]);
 
   const toggleFilter = (item: string) => {
@@ -54,82 +69,27 @@ const Filters: FC<FiltersProps> = () => {
           <p className="capitalize text-sm font-bold">out of stock items</p>
           <ToggleButton />
         </div>
-        <Accordion
-          className={`flex flex-col`}
-          childrenClass="flex flex-col gap-1 h-60"
-          title="category"
-        >
-          {menuItems.category.map((item) => (
-            <CheckBox
-              key={item.id}
-              htmlFor={`${item.text}`}
-              labelClassName="filter-applied__items--label"
-              inputClassName="mr-1.5"
-              onChange={() => toggleFilter(item.text)}
-              name={item.text}
-              checked={filters.includes(item.text) ? true : false}
-            >
-              {item.text}
-            </CheckBox>
-          ))}
-        </Accordion>
-        <Accordion
-          className={`flex flex-col`}
-          childrenClass="flex flex-col gap-1 h-[10.5rem]"
-          title="skin condition"
-        >
-          {menuItems.skinCondition.map((item) => (
-            <CheckBox
-              key={item.id}
-              htmlFor={`${item.text}`}
-              labelClassName="filter-applied__items--label"
-              inputClassName="mr-1.5"
-              onChange={() => toggleFilter(item.text)}
-              name={item.text}
-              checked={filters.includes(item.text) ? true : false}
-            >
-              {item.text}
-            </CheckBox>
-          ))}
-        </Accordion>
-        <Accordion
-          className={`flex flex-col`}
-          childrenClass="flex flex-col gap-1 h-36"
-          title="featured"
-        >
-          {menuItems.special.map((item) => (
-            <CheckBox
-              key={item.id}
-              htmlFor={`${item.text}`}
-              labelClassName="filter-applied__items--label"
-              inputClassName="mr-1.5"
-              onChange={() => toggleFilter(item.text)}
-              name={item.text}
-              checked={filters.includes(item.text) ? true : false}
-            >
-              {item.text}
-            </CheckBox>
-          ))}
-        </Accordion>
-        <Accordion
-          className={`flex flex-col`}
-          childrenClass="flex flex-col gap-1 h-[7.5rem]"
-          title="price"
-        >
-          {menuItems.price.map((item) => (
-            <CheckBox
-              key={item.id}
-              htmlFor={`${item.text}`}
-              labelClassName="filter-applied__items--label"
-              inputClassName="mr-1.5"
-              onChange={() => toggleFilter(item.text)}
-              name={item.text}
-              checked={filters.includes(item.text) ? true : false}
-            >
-              {item.text}
-            </CheckBox>
-          ))}
-        </Accordion>
+        {Accordions.map((accordion) => (
+          <Accordion
+            className={`flex flex-col`}
+            childrenClass={`flex flex-col gap-1 ${accordion.childrenClass}`}
+            title={accordion.title}
+          >
+            {menuItems[accordion.id].map((item) => (
+              <CheckBox
+                key={item.id}
+                htmlFor={`${item.text}`}
+                labelClassName="filter-applied__items--label"
+                inputClassName="mr-1.5"
+                onChange={() => toggleFilter(item.text)}
+                name={item.text}
+                checked={filters.includes(item.text) ? true : false}
+              >
+                {item.text}
+              </CheckBox>
+            ))}
+          </Accordion>
+        ))}
       </div>
     </>
   );

@@ -17,11 +17,7 @@ const AboutUs = () => {
           <div className="flex flex-col gap-2 w-full md:w-1/2 lg:w-1/4">
             <h4 className="font-bold capitalize mb-3">how can we help?</h4>
             {aboutUs.map((item) => (
-              <Link
-                key={item.id}
-                to={"/"}
-                className="about-us__text font-extralight"
-              >
+              <Link key={item.id} to={"/"} className="text__md font-extralight">
                 {item.text}
               </Link>
             ))}
@@ -32,15 +28,17 @@ const AboutUs = () => {
               <Link
                 key={product.id}
                 to={`/`}
-                className="about-us__text font-extralight"
+                className="text__md font-extralight"
               >
                 {product.text}
               </Link>
             ))}
           </div>
           <div className="flex flex-col gap-2 w-full lg:w-1/2 z-20">
-            <h4 className="capitalize mb-3">keep in touch with beautya</h4>
-            <p className="about-us__text font-extralight">
+            <h4 className="capitalize font-bold mb-3">
+              keep in touch with beautya
+            </h4>
+            <p className="text__md font-extralight">
               Join the Beautya newsletter and be first to hear about news,
               offers and skincare advice.
             </p>
@@ -59,7 +57,7 @@ const AboutUs = () => {
               />
               <CheckBox
                 htmlFor="1"
-                labelClassName="inline-flex sm:hidden items-start about-us__text font-extralight select-none"
+                labelClassName="inline-flex sm:hidden items-start text__md font-extralight select-none"
                 onClick={() => setIsAcceptPolicy((prev) => !prev)}
                 name="policy"
               >
@@ -77,7 +75,7 @@ const AboutUs = () => {
             </form>
             <CheckBox
               htmlFor="2"
-              labelClassName={`hidden sm:inline-flex items-start about-us__label about-us__text \
+              labelClassName={`hidden sm:inline-flex items-start about-us__label text__md \
               font-extralight select-none mt-3 cursor-pointer`}
               onClick={() => setIsAcceptPolicy((prev) => !prev)}
               name="policy"

@@ -41,7 +41,7 @@ const OurBlogs: FC = () => {
   return (
     <>
       <section className="lg:container relative flex flex-col items-center justify-center px-8">
-        <h3 className="our-blog__title">Our Blog</h3>
+        <h3 className="text__2xl font-bold">Our Blog</h3>
         <SwiperWrapper
           spaceBetween={15}
           breakpoints={BREAK_POINT}
@@ -64,12 +64,12 @@ const OurBlogs: FC = () => {
                 />
                 <div className="flex flex-col gap-3 bg-white p-5">
                   <div>
-                    <h4 className="our-blog-post__title">{blog.title}</h4>
-                    <p className="our-blog-post__info text-Gray-606060">
+                    <h4 className="text__lg font-bold">{blog.title}</h4>
+                    <p className="text__sm text-Gray-606060">
                       {blog.about} | {blog.author} | {changeDate(blog.date)}
                     </p>
                   </div>
-                  <p className="truncate-overflow our-blog__button-text">
+                  <p className="truncate-overflow text__md">
                     {blog.description}
                   </p>
                 </div>

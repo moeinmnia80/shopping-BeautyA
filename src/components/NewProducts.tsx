@@ -31,7 +31,7 @@ const NewProducts: FC = () => {
   return (
     <>
       <section className="flex flex-col items-center h-max bg-primary-750 py-10 my-14 ">
-        <h3 className="new-product__title text-white font-bold mb-6">New In</h3>
+        <h3 className="text__2xl text-white font-bold mb-6">New In</h3>
         <SwiperWrapper
           isOutSide
           isDarkArrow
@@ -55,10 +55,10 @@ const NewProducts: FC = () => {
               alt="new product banner"
               className="w-full object-cover"
             />
-            <h4 className="new-product-banner__title text-primary-100">
+            <h4 className="text__xl font-bold text-primary-100">
               Beautya La Mousse Off/On Foaming Cleaner
             </h4>
-            <p className="new-product-banner__text text-white">
+            <p className="text__lg font-light text-white">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis en im velit mollit.
             </p>

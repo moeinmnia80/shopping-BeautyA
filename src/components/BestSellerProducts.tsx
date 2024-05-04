@@ -71,13 +71,11 @@ const BestSellerProduucts: FC = () => {
                     className="w-full"
                   />
                   <div className="flex flex-col gap-y-5 bg-white p-5">
-                    <h4 className="best-seller-product__title text-primary-500 font-bold">
+                    <h4 className="text__xl text-primary-500 font-bold">
                       {product.title}
                     </h4>
-                    <p className="best-seller-product__text">
-                      {product.description}
-                    </p>
-                    <p className=" self-start">${product.price}</p>
+                    <p className="text__md">{product.description}</p>
+                    <p className="self-start">${product.price}</p>
                   </div>
                 </SwiperSlide>
               ))

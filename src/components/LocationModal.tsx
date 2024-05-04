@@ -49,9 +49,7 @@ const LocationModal: FC<LocationModalProps> = ({
         ref={domeNode}
       >
         <div className="flex items-center justify-between">
-          <h5 className="location-modal__title font-bold">
-            Location and currency settings
-          </h5>
+          <h5 className="text__lg font-bold">Location and currency settings</h5>
           <XIcon
             className={`w-6 h-6 cursor-pointer hover:text-Error p-1`}
             onClick={() => setIsClicked(false)}

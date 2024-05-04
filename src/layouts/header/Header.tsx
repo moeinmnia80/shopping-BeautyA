@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { navMenuItems } from "@constants/navMenuItems";
 
@@ -25,6 +25,7 @@ const Header = () => {
     language: "EN",
     currency: "USD",
   });
+  const { pathname } = useLocation();
 
   useEffect(() => {
     isHover && document.body.classList.add(`overflow-hidden`);
@@ -32,6 +33,10 @@ const Header = () => {
       isHover && document.body.classList.remove(`overflow-hidden`);
     };
   }, [isHover]);
+
+  useEffect(() => {
+    pathname.includes("women-skincare") && setTab("women skincare");
+  }, []);
 
   return (
     <>
@@ -75,7 +80,7 @@ const Header = () => {
               <Link
                 to={item.link}
                 key={item.id}
-                className={`group flex items-end h-full header-list-text text-nowrap \
+                className={`group flex items-end h-full text__md text-nowrap \
                 hover:text-primary-500 duration-300 py-4 ${
                   tab === item.name.toLowerCase() && "text-primary-500"
                 }`}

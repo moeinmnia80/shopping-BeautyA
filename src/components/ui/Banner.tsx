@@ -36,14 +36,14 @@ const Banner: FC = () => {
         </SwiperWrapper>
         <h2
           className={`absolute bottom-[22vmax] md:bottom-[18vmax] left-1/2 -translate-x-1/2 \
-          text-white banner__title font-bold capitalize z-20`}
+          text-white text__4xl text-nowrap font-bold capitalize z-20 select-none`}
         >
-          unlock your natural glow{" "}
+          unlock your natural glow
         </h2>
         <Link
           to={`/`}
           className={`absolute bottom-[16vmax] md:bottom-[14vmax] left-1/2 -translate-x-1/2 \
-          banner__button-text text-white border-1 border-white px-8 py-2 z-20`}
+          text__md text-white border-1 border-white px-8 py-2 z-20`}
         >
           Know More
         </Link>

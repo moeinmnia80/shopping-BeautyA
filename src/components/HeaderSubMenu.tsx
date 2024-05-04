@@ -66,7 +66,7 @@ const HeaderSubMenu: FC<HeaderSubMenuProps> = ({ setIsHover }) => {
               <h4 className="w-full font-bold">
                 capture totale super potent rich cream
               </h4>
-              <p className="submenu__ads-text text-pretty font-light">
+              <p className="text-sm text-pretty font-light">
                 Global age-defying rich cream - intense nourishment &
                 revitalization
               </p>

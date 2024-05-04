@@ -19,7 +19,7 @@ const SpecialOffers: FC = () => {
             />
           </div>
           <div className="flex flex-col gap-y-3 md:gap-2 w-full md:w-1/2 px-8 lg:pr-0">
-            <h3 className="special-offer__title absolute top-0 left-1/2 -translate-x-1/2 md:relative">
+            <h3 className="text__xl font-bold absolute top-0 left-1/2 -translate-x-1/2 md:relative">
               Special Offers
             </h3>
             {specialOfferTexts.map((text) => (
@@ -28,7 +28,7 @@ const SpecialOffers: FC = () => {
               </p>
             ))}
             <button
-              className={`text-primary-500 md:text-white bg-transparent border-2 border-primary-500
+              className={`text__md text-primary-500 md:text-white bg-transparent border-2 border-primary-500
               md:bg-primary-500 px-8 py-3 self-center md:self-end md:capitalize`}
             >
               find branches

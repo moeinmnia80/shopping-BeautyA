@@ -20,7 +20,7 @@ const SuggestedValue: FC = () => {
                 alt={item.alt}
                 className="w-max h-max object-cover"
               />
-              <p className="suggested-value__text text-primary-500 capitalize ml-4">
+              <p className="text__sm text-primary-500 capitalize ml-4">
                 {item.text}
               </p>
             </div>
