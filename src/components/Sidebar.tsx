@@ -1,7 +1,7 @@
 import { ComponentProps, Dispatch, FC, SetStateAction } from "react";
 
 import Filters from "@components/Filters";
-import XIcone from "@assets/icons/XIcone";
+import XIcon from "@assets/icons/XIcon";
 
 type SidebarProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -13,8 +13,8 @@ const Sidebar: FC<SidebarProps> = ({ setIsOpen, ...props }) => {
       <div {...props}>
         <div className="flex items-center justify-between">
           <h4 className="flex items-center text-xl font-bold h-8">Filters</h4>
-          <XIcone
-            style={`w-5 h-5 hover:text-primary-500 md:hidden`}
+          <XIcon
+            className={`w-5 h-5 hover:text-primary-500 md:hidden`}
             onClick={() => setIsOpen(false)}
           />
         </div>

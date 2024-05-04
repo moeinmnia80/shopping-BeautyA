@@ -1,6 +1,8 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const PhoneIcon: FC<{ style: string }> = ({ style }) => {
+type PhoneIconProps = ComponentProps<"svg">;
+
+const PhoneIcon: FC<PhoneIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -9,7 +11,7 @@ const PhoneIcon: FC<{ style: string }> = ({ style }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={style}
+        {...props}
       >
         <path
           strokeLinecap="round"

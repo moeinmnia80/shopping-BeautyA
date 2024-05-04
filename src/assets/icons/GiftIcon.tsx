@@ -1,6 +1,7 @@
 import { ComponentProps, FC } from "react";
 
 type GiftIconProps = ComponentProps<"svg">;
+
 const GiftIcon: FC<GiftIconProps> = ({ ...props }) => {
   return (
     <>

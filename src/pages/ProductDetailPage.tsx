@@ -7,7 +7,7 @@ import Loader from "@components/ui/Loader";
 import ProductsType from "src/types/Products";
 import ProductDetailSwiper from "@components/ProductDetailSwiper";
 import Breadcrumb, { BreadcrumbItem } from "@components/ui/Breadcrumb";
-import Select from "@components/ui/Select";
+import Select, { Option } from "@components/ui/Select";
 import LocationIcon from "@assets/icons/LocationIcon";
 import GiftIcon from "@assets/icons/GiftIcon";
 import TagIcon from "@assets/icons/TagIcon";
@@ -22,6 +22,7 @@ const size = [
 ];
 
 const ProductDetailPage = () => {
+  const [whichItem, setWhichItem] = useState("30 ML");
   const [status, setStatus] = useState<"vertical" | "horizontal">("vertical");
 
   const { slug } = useParams();
@@ -62,7 +63,6 @@ const ProductDetailPage = () => {
         </Breadcrumb>
         <div className="grid grid-cols-1 grid-rows-subgrid lg:grid-cols-3 lg:grid-rows-1 items-center gap-5 w-full h-full mt-5">
           <ProductDetailSwiper status={status} />
-
           <h4
             className={`text-primary-500 text-3xl font-bold
             row-start-1 row-end-2 col-span-1 lg:col-start-3 lg:col-end-5`}
@@ -83,22 +83,28 @@ const ProductDetailPage = () => {
           </p>
           <Select
             label=""
-            labelClassName="relative flex flex-col w-full h-14 lg:col-start-3 lg:col-end-5"
-            name={"size"}
-            className={`flex justify-between w-full h-full
+            labelClassName="flex flex-col w-full lg:col-start-3 lg:col-end-5"
+            className={`relative flex items-center w-full h-full py-3 px-2
             text-Gray-606060 bg-transparent border-b-1 border-Gray-606060 outline-none`}
+            value={whichItem}
           >
             {size.map((item) => (
-              <option key={item.id} className="" value={""}>
-                {item.size} ${item.price}
-              </option>
+              <Option
+                key={item.id}
+                className={`flex items-center justify-between text-sm capitalize border-b-1 border-Gray-DFDFDF px-2 py-3 
+                cursor-pointer last:border-0 `}
+                onClick={() => setWhichItem(item.size)}
+              >
+                {item.size}
+                <span className="absolute right-2">${item.price}</span>
+              </Option>
             ))}
           </Select>
           <button
             className={`flex items-center justify-center w-full 
           text-white bg-primary-500 py-3 capitalize lg:col-start-3 lg:col-end-5`}
           >
-            <LocationIcon style="w-6 h-6 mr-2" />
+            <LocationIcon className="w-6 h-6 mr-2" />
             <p className="mt-1">check in branches stock</p>
           </button>
           <div className="w-full flex flex-col gap-6 bg-primary-25 px-4 py-5 lg:col-start-3 lg:col-end-5">

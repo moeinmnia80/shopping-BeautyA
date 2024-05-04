@@ -1,6 +1,8 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const ChevronLeft: FC<{ style: string }> = ({ style }) => {
+type ChevronLeftProps = ComponentProps<"svg">;
+
+const ChevronLeft: FC<ChevronLeftProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -9,7 +11,7 @@ const ChevronLeft: FC<{ style: string }> = ({ style }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={style}
+        {...props}
       >
         <path
           strokeLinecap="round"

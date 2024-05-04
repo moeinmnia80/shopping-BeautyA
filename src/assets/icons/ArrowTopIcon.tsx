@@ -1,5 +1,8 @@
-import { FC } from "react";
-const ArrowTopIcon: FC<{ style: string }> = ({ style }) => {
+import { ComponentProps, FC } from "react";
+
+type ArrowTopIconProps = ComponentProps<"svg">;
+
+const ArrowTopIcon: FC<ArrowTopIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -8,7 +11,7 @@ const ArrowTopIcon: FC<{ style: string }> = ({ style }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={style}
+        {...props}
       >
         <path
           strokeLinecap="round"

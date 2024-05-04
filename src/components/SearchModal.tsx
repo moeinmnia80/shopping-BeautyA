@@ -44,7 +44,7 @@ const SearchContainer: FC<SearchContainerProps> = ({
             <form onSubmit={recordFormData}>
               <label className="relative flex items-center w-full">
                 <SearchIcon
-                  style={`absolute left-4 top-1/2 -translate-y-[calc(50%+2px)] w-5 h-5 text-Gray-606060`}
+                  className={`absolute left-4 top-1/2 -translate-y-[calc(50%+2px)] w-5 h-5 text-Gray-606060`}
                 />
                 <input
                   type="text"

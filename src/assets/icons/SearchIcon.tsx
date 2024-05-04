@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef, FC } from "react";
+import { ComponentProps, FC } from "react";
 
-type SearchIconProps = { style: string } & ComponentPropsWithoutRef<"svg">;
-const SearchIcon: FC<SearchIconProps> = ({ style, ...rest }) => {
+type SearchIconProps = ComponentProps<"svg">;
+const SearchIcon: FC<SearchIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -10,8 +10,7 @@ const SearchIcon: FC<SearchIconProps> = ({ style, ...rest }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={style}
-        {...rest}
+        {...props}
       >
         <path
           strokeLinecap="round"

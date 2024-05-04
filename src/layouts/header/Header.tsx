@@ -8,7 +8,7 @@ import SearchIcon from "@assets/icons/SearchIcon";
 import LanguageIcon from "@assets/icons/LanguageIcon";
 import HambergerMenuIcon from "@assets/icons/HambergerMenuIcon";
 import SubMenu from "@components/HeaderSubMenu";
-import XIcone from "@assets/icons/XIcone";
+import XIcon from "@assets/icons/XIcon";
 import MenuLabel from "@components/HeaderMenu";
 import SearchModal from "@components/SearchModal";
 import LocationModal from "@components/LocationModal";
@@ -42,18 +42,18 @@ const Header = () => {
         <nav className="lg:container flex justify-between items-end w-full h-full px-8">
           <div className="md:hidden flex w-1/4 z-10 py-5">
             {isOpen ? (
-              <XIcone
-                style="w-5 h-5 mr-2"
+              <XIcon
+                className="w-5 h-5 mr-2"
                 onClick={() => setIsOpen((prev) => !prev)}
               />
             ) : (
               <HambergerMenuIcon
-                style="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2"
                 onClick={() => setIsOpen((prev) => !prev)}
               />
             )}
             <SearchIcon
-              style="w-5 h-5"
+              className="w-5 h-5"
               onClick={() => setIsSearching((prev) => !prev)}
             />
           </div>
@@ -93,7 +93,7 @@ const Header = () => {
           </ul>
           <div className="flex items-center w-1/4 md:w-max justify-end py-5">
             <SearchIcon
-              style="w-5 h-5 hidden lg:inline-block cursor-pointer"
+              className="w-5 h-5 hidden lg:inline-block cursor-pointer"
               onClick={() => setIsSearching((prev) => !prev)}
             />
             <span className="hidden lg:flex w-px h-5 bg-Gray-868686 mx-2" />
@@ -101,7 +101,7 @@ const Header = () => {
               className="flex items-center cursor-pointer"
               onClick={() => setIsClicked((prev) => !prev)}
             >
-              <LanguageIcon style="w-5 h-5" />
+              <LanguageIcon className="w-5 h-5" />
               <div className="flex items-end ml-1.5">
                 <p className="relative -bottom-[2px] text-sm md:text-[1rem] ">
                   {changeLocation?.region}

@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import ProductsType from "src/types/Products";
@@ -29,11 +29,11 @@ const hideOverflow = (isActive: boolean) => {
 };
 
 const sortProductHandler = (
-  event: ChangeEvent<HTMLSelectElement>,
+  target: string,
   products: ProductsType[],
   mainData: ProductsType[]
 ) => {
-  switch (event.target.value) {
+  switch (target) {
     case "expensive":
       return [...products.sort((a, b) => +b.price - +a.price)];
     case "cheap":

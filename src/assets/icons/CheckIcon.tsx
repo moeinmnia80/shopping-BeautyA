@@ -1,6 +1,8 @@
 import { ComponentProps, FC } from "react";
 
-const HambergerMenuIcon: FC<ComponentProps<"svg">> = ({ ...props }) => {
+type CheckIconProps = ComponentProps<"svg">;
+
+const CheckIcon: FC<CheckIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -14,11 +16,11 @@ const HambergerMenuIcon: FC<ComponentProps<"svg">> = ({ ...props }) => {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          d="m4.5 12.75 6 6 9-13.5"
         />
       </svg>
     </>
   );
 };
 
-export default HambergerMenuIcon;
+export default CheckIcon;

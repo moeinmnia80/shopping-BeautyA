@@ -19,7 +19,7 @@ const Breadcrumb: FC<BreadcrumbType> = ({ children, ...props }) => {
           <div className="flex items-center gap-2">
             {child}
             {children.length - 1 !== index && (
-              <ChevronLeft style="w-4 h-4 rotate-180" key={index} />
+              <ChevronLeft className="w-4 h-4 rotate-180" key={index} />
             )}
           </div>
         ))}

@@ -21,7 +21,7 @@ const ScrollTopButton = () => {
           className="fixed bottom-20 right-5 hidden lg:inline-block border-2 bg-background border-primary-500 p-2 z-20"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <ArrowTopIcon style="w-7 h-7 text-primary-500" />
+          <ArrowTopIcon className="w-7 h-7 text-primary-500" />
         </button>
       )}
     </>

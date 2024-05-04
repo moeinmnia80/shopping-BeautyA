@@ -36,7 +36,7 @@ const Accordion: FC<AccordionProps> = ({
             {title}
           </p>
           <ChevronTop
-            style={`w-4 h-4 ${
+            className={`w-4 h-4 ${
               isOpen ? "rotate-0 text-primary-500" : "rotate-180"
             } duration-300`}
           />

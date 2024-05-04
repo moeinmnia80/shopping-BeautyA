@@ -1,12 +1,13 @@
 import { FC, useState } from "react";
 
-import XIcone from "@assets/icons/XIcone";
-import Select from "@components/ui/Select";
-import { locationInput } from "@constants/locationInput";
+import XIcon from "@assets/icons/XIcon";
+import { hideOverflow } from "@utils/helper";
 import LocationType from "src/types/Location";
 import { countries } from "@constants/counteries";
-import { hideOverflow } from "@utils/helper";
 import useClickOutside from "@hooks/useClickOutside";
+import Select, { Option } from "@components/ui/Select";
+import { locationInput } from "@constants/locationInput";
+import CheckIcon from "@assets/icons/CheckIcon";
 
 type LocationModalProps = {
   isClicked: boolean;
@@ -36,11 +37,11 @@ const LocationModal: FC<LocationModalProps> = ({
   };
   return (
     <>
-      <section
+      <div
         className={`fixed top-20 lg:top-24 ${
           isClicked ? "flex" : "hidden"
         } flex justify-center items-center w-full h-svh bg-[#0000020] backdrop-blur-sm`}
-      ></section>
+      />
       <div
         className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
       ${isClicked ? "flex" : "hidden"}
@@ -51,8 +52,8 @@ const LocationModal: FC<LocationModalProps> = ({
           <h5 className="location-modal__title font-bold">
             Location and currency settings
           </h5>
-          <XIcone
-            style={`w-6 h-6 cursor-pointer hover:text-Error p-1`}
+          <XIcon
+            className={`w-6 h-6 cursor-pointer hover:text-Error p-1`}
             onClick={() => setIsClicked(false)}
           />
         </div>
@@ -60,27 +61,25 @@ const LocationModal: FC<LocationModalProps> = ({
           <Select
             key={item.id}
             label={item.label}
-            labelClassName="relative flex flex-col h-16"
-            name={item.name}
-            className="h-full text-Gray-606060 border-b-1 border-Gray-606060 outline-none"
-            onChange={(event) =>
-              setNewLocation((prev: LocationType) => ({
-                ...prev,
-                [item.name]: event.target.value,
-              }))
-            }
+            labelClassName="flex flex-col"
+            className="relative flex w-full text-Gray-606060 border-b-1 border-Gray-606060 outline-none py-3"
             value={newLocation[`${item.name}`]}
           >
             {countries.map((country, index) => (
-              <option
+              <Option
                 key={index}
-                className="flex h-20"
-                value={
-                  item.name === "region"
-                    ? `${country.code}`
-                    : item.name === "language"
-                    ? `${country[item.name].code?.toUpperCase()}`
-                    : country[item.name].code
+                className={`flex items-center justify-between text-sm capitalize border-b-1 border-Gray-DFDFDF px-2 py-3 
+                cursor-pointer last:border-0 `}
+                onClick={() =>
+                  setNewLocation((prev: LocationType) => ({
+                    ...prev,
+                    [item.name]:
+                      item.name === "region"
+                        ? `${country.code}`
+                        : item.name === "language"
+                        ? `${country[item.name].code?.toUpperCase()}`
+                        : country[item.name].code,
+                  }))
                 }
               >
                 {item.name === "region"
@@ -88,7 +87,19 @@ const LocationModal: FC<LocationModalProps> = ({
                   : item.name === "language"
                   ? `${country[item.name].name}`
                   : `${country.currency.symbol} (${country.currency.code})`}
-              </option>
+                {item.name === "region" &&
+                  newLocation.region === country.code && (
+                    <CheckIcon className="w-4 h-4 text-primary-500" />
+                  )}
+                {item.name === "language" &&
+                  newLocation.language === country.language.code && (
+                    <CheckIcon className="w-4 h-4 text-primary-500" />
+                  )}
+                {item.name === "currency" &&
+                  newLocation.currency === country.currency.code && (
+                    <CheckIcon className="w-4 h-4 text-primary-500" />
+                  )}
+              </Option>
             ))}
           </Select>
         ))}

@@ -1,9 +1,8 @@
 import { ComponentProps, FC } from "react";
 
-const LanguageIcon: FC<{ style: string } & ComponentProps<"svg">> = ({
-  style,
-  ...props
-}) => {
+type LanguageIconProps = ComponentProps<"svg">;
+
+const LanguageIcon: FC<LanguageIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -12,7 +11,6 @@ const LanguageIcon: FC<{ style: string } & ComponentProps<"svg">> = ({
         viewBox="0 0 24 24"
         strokeWidth={1.25}
         stroke="currentColor"
-        className={style}
         {...props}
       >
         <path

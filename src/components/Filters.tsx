@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 
 import CheckBox from "@ui/CheckBox";
 import Accordion from "@ui/Accordion";
-import XIcone from "@assets/icons/XIcone";
+import XIcon from "@assets/icons/XIcon";
 import ToggleButton from "@ui/ToggleButton";
 import { menuItems } from "@constants/MenuItems";
 
@@ -33,8 +33,8 @@ const Filters: FC<FiltersProps> = () => {
                 hover:border-primary-500 duration-200`}
               >
                 {item}
-                <XIcone
-                  style={`w-3 h-3 ml-2 cursor-pointer hover:text-primary-500 duration-200`}
+                <XIcon
+                  className={`w-3 h-3 ml-2 cursor-pointer hover:text-primary-500 duration-200`}
                   onClick={() => deleteFilter(item)}
                 />
               </span>

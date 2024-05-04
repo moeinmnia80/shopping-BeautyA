@@ -54,7 +54,7 @@ const ProductDetailSwiper: FC<ProductDetailSwiperProps> = ({ status }) => {
         className=""
       >
         {thumbnailPicture.map((item) => (
-          <SwiperSlide key={item.id} className="w-full h-full">
+          <SwiperSlide key={item.id} className="w-full h-full aspect-[1/1]">
             <img
               src={item.src}
               alt={item.alt}

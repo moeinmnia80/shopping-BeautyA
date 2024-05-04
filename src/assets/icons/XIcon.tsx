@@ -1,9 +1,8 @@
-import { ComponentPropsWithoutRef, FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const XIcone: FC<{ style: string } & ComponentPropsWithoutRef<"svg">> = ({
-  style,
-  ...rest
-}) => {
+type XIconProps = ComponentProps<"svg">;
+
+const XIcon: FC<XIconProps> = ({ ...props }) => {
   return (
     <>
       <svg
@@ -12,8 +11,7 @@ const XIcone: FC<{ style: string } & ComponentPropsWithoutRef<"svg">> = ({
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={style}
-        {...rest}
+        {...props}
       >
         <path
           strokeLinecap="round"
@@ -25,4 +23,4 @@ const XIcone: FC<{ style: string } & ComponentPropsWithoutRef<"svg">> = ({
   );
 };
 
-export default XIcone;
+export default XIcon;

@@ -1,13 +1,15 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
-const ChevronTop: FC<{ style: string }> = ({ style }) => {
+type ChevronTopProps = ComponentProps<"svg">;
+
+const ChevronTop: FC<ChevronTopProps> = ({ ...props }) => {
   return (
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className={style}
+        {...props}
       >
         <path
           fillRule="evenodd"
