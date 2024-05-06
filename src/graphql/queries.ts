@@ -73,6 +73,9 @@ export const GET_SKINCARE_PRODUCT = gql`
       type
       details
       advantage
+      productInfo {
+        html
+      }
     }
   }
 `;

@@ -42,4 +42,33 @@ const sortProductHandler = (
       return [...mainData];
   }
 };
-export { changeDate, scrollToTop, hideOverflow, sortProductHandler };
+
+const tabChangeHandler = () => {
+  useEffect(() => {
+    const tabs = document.querySelectorAll(
+      ".tab-btn"
+    )! as NodeListOf<HTMLLIElement>;
+    const tabLine = document.querySelector(".tab-line")! as HTMLDivElement;
+
+    const tabHandler = (tab: HTMLLIElement) => {
+      tabs.forEach((tab) => tab.classList.remove("active-tab"));
+      tab.classList.add("active-tab");
+
+      tabLine.style.width = tab.offsetWidth + "px";
+      tabLine.style.left = tab.offsetLeft + "px";
+    };
+    tabs.forEach((tab) => tab.addEventListener("click", () => tabHandler(tab)));
+    return () =>
+      tabs.forEach((tab) =>
+        tab.removeEventListener("click", () => tabHandler(tab))
+      );
+  }, []);
+};
+
+export {
+  changeDate,
+  scrollToTop,
+  hideOverflow,
+  sortProductHandler,
+  tabChangeHandler,
+};

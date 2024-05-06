@@ -1,5 +1,5 @@
-import { FC } from "react";
 import { SwiperSlide } from "swiper/react";
+import { FC, useEffect, useState } from "react";
 import { Navigation, Thumbs, FreeMode } from "swiper/modules";
 
 import SwiperWrapper from "@components/ui/SwiperWrapper";
@@ -10,7 +10,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-type ProductDetailSwiperProps = { status: "horizontal" | "vertical" };
+type ProductDetailSwiperProps = {};
 
 const BREAK_POINT = {
   300: {
@@ -31,8 +31,19 @@ const BREAK_POINT = {
   },
 };
 
-const ProductDetailSwiper: FC<ProductDetailSwiperProps> = ({ status }) => {
+const ProductDetailSwiper: FC<ProductDetailSwiperProps> = () => {
   // const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType>();
+  const [status, setStatus] = useState<"vertical" | "horizontal">("vertical");
+
+  useEffect(() => {
+    const windowStatusHandler = () => {
+      window.innerWidth < 1024
+        ? setStatus("horizontal")
+        : setStatus("vertical");
+    };
+    window.addEventListener("resize", windowStatusHandler);
+    return () => window.removeEventListener("resize", windowStatusHandler);
+  }, []);
 
   return (
     <div className="flex flex-col-reverse row-start-3 lg:row-span-6 lg:flex-row gap-5 lg:col-start-1 lg:col-end-3 w-full h-full">

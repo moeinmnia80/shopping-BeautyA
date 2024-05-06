@@ -12,7 +12,7 @@ type SelectProps = {
   label: string;
   labelClassName?: string;
   labelText?: string;
-  value: string;
+  value: string | ReactNode;
   children?: ReactNode;
 } & ComponentPropsWithoutRef<"div">;
 
