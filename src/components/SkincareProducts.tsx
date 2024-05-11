@@ -70,7 +70,7 @@ const SkincareProducts: FC<SkincareProductsProps> = ({
           <Select
             label="Sort:"
             labelText="absolute left-2 top-1/2 -translate-y-1/2 text-sm flex font-bold"
-            labelClassName={`relative flex self-end w-full md:w-[calc(100%/3-.75rem)]  xl:w-[calc(25%-1rem)] h-full`}
+            labelClassName={`relative flex self-end w-full md:w-[calc(100%/3-.75rem)]  xl:w-[calc(25%-1rem)] h-full cursor-pointer`}
             className={`flex items-center justify-start w-full text-xs lg:text-sm font-light 
             capitalize bg-white border-1 border-Gray-DFDFDF outline-none pl-10 md:pl-12 py-1`}
             value={whichSort}

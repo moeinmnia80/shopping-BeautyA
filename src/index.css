@@ -45,15 +45,6 @@
   font-size: clamp(20px, 1.6vmax, 36px);
 }
 
-.title {
-  color: #a10550;
-  font-size: clamp(16px, 1vmax, 20px);
-  font-weight: bold;
-  margin: 1.5rem 0;
-}
-.title:first-child {
-  margin-top: 0;
-}
 .description {
   color: #0c0c0c;
   font-size: clamp(12px, 1vmax, 16px);

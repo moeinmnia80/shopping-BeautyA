@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
-import ProductsType from "src/types/Products";
+import { ProductDetailType } from "src/types/Products";
 import { GET_SKINCARE_PRODUCT } from "@graphql/queries";
 import ProductDetailTab from "@components/ProductDetailTab";
 import ProductDetailInfo from "@components/ProductDetailInfo";
@@ -11,14 +11,7 @@ import Breadcrumb, { BreadcrumbItem } from "@components/ui/Breadcrumb";
 const ProductDetailPage = () => {
   const { slug } = useParams();
   const { loading, data } = useQuery<{
-    skincareProduct: ProductsType & {
-      type: string;
-      details: string;
-      advantage: string;
-      productInfo: {
-        html: TrustedHTML;
-      };
-    };
+    skincareProduct: ProductDetailType;
   }>(GET_SKINCARE_PRODUCT, {
     variables: { slug },
   });

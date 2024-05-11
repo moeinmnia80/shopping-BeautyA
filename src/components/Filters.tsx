@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 
 import CheckBox from "@ui/CheckBox";
-import Accordion from "@ui/Accordion";
+import Accordion, { AccordionItem } from "@ui/Accordion";
 import XIcon from "@assets/icons/XIcon";
 import ToggleButton from "@ui/ToggleButton";
 import { menuItems } from "@constants/MenuItems";
@@ -69,27 +69,32 @@ const Filters: FC = () => {
           <p className="capitalize text-sm font-bold">out of stock items</p>
           <ToggleButton />
         </div>
-        {Accordions.map((accordion) => (
-          <Accordion
-            className={`flex flex-col`}
-            childrenClass={`flex flex-col gap-1 ${accordion.childrenClass}`}
-            title={accordion.title}
-          >
-            {menuItems[accordion.id].map((item) => (
-              <CheckBox
-                key={item.id}
-                htmlFor={`${item.text}`}
-                labelClassName="filter-applied__items--label"
-                inputClassName="mr-1.5"
-                onChange={() => toggleFilter(item.text)}
-                name={item.text}
-                checked={filters.includes(item.text) ? true : false}
-              >
-                {item.text}
-              </CheckBox>
-            ))}
-          </Accordion>
-        ))}
+        <Accordion className={`flex flex-col `}>
+          {Accordions.map((accordion) => (
+            <AccordionItem
+              minHeight={0}
+              icon="chevron"
+              key={accordion.id}
+              value={accordion.id}
+              trigger={accordion.title}
+              className={`flex flex-col bg-white border-b-1 border-Gray-DFDFDF`}
+            >
+              {menuItems[accordion.id].map((item) => (
+                <CheckBox
+                  key={item.id}
+                  htmlFor={`${item.text}`}
+                  labelClassName="filter-applied__items--label"
+                  inputClassName="mr-1.5"
+                  onChange={() => toggleFilter(item.text)}
+                  name={item.text}
+                  checked={filters.includes(item.text) ? true : false}
+                >
+                  {item.text}
+                </CheckBox>
+              ))}
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </>
   );

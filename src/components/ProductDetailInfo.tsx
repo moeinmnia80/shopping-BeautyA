@@ -6,15 +6,11 @@ import TagIcon from "@assets/icons/TagIcon";
 import GiftIcon from "@assets/icons/GiftIcon";
 import ChatIcon from "@assets/icons/ChatIcon";
 import LocationIcon from "@assets/icons/LocationIcon";
-import ProductsType from "src/types/Products";
+import { ProductDetailType } from "src/types/Products";
 
 type ProductDetailInfoProps = {
   data?: {
-    skincareProduct: ProductsType & {
-      type: string;
-      details: string;
-      advantage: string;
-    };
+    skincareProduct: ProductDetailType;
   };
   loading: boolean;
 };
@@ -45,7 +41,7 @@ const ProductDetailInfo: FC<ProductDetailInfoProps> = ({ data, loading }) => {
       <div className="capitalize row-start-2 row-end-3 lg:col-start-3 lg:col-end-5">
         <p className="text__md font-bold">{data?.skincareProduct.type}</p>
         <p className="text__md text-Gray-606060">
-          {data?.skincareProduct.details}
+          {data?.skincareProduct.property}
         </p>
         <p className="text__md text-Gray-606060 font-bold">
           {data?.skincareProduct.advantage}

@@ -71,9 +71,21 @@ export const GET_SKINCARE_PRODUCT = gql`
         url
       }
       type
-      details
+      property
       advantage
-      productInfo {
+      details {
+        html
+      }
+      howToApply {
+        html
+      }
+      ingredient {
+        html
+      }
+      whatMakesItAdvance {
+        html
+      }
+      specification {
         html
       }
     }
