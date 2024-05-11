@@ -76,8 +76,9 @@ const Filters: FC = () => {
               icon="chevron"
               key={accordion.id}
               value={accordion.id}
-              trigger={accordion.title}
               togglerButton={false}
+              contentClassName="px-3"
+              trigger={accordion.title}
               className={`flex flex-col bg-white border-b-1 border-Gray-DFDFDF`}
             >
               {menuItems[accordion.id].map((item) => (

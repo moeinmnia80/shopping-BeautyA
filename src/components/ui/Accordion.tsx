@@ -42,6 +42,7 @@ type AccordionItemProps = {
   value: string;
   trigger: string;
   triggerClassName?: string;
+  contentClassName?: string;
   minHeight: 0 | "1rem" | "2rem" | "3rem" | "5rem" | "7.5rem" | "10rem";
   icon: "chevron" | "plus";
   togglerButton: boolean;
@@ -52,6 +53,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   value,
   trigger,
   triggerClassName,
+  contentClassName,
   minHeight,
   icon,
   togglerButton,
@@ -77,20 +79,30 @@ export const AccordionItem: FC<AccordionItemProps> = ({
           className="flex items-center justify-between capitalize text-sm font-bold p-3"
         >
           <h4
-            className={`${open ? " text-primary-500" : ""} ${triggerClassName}`}
+            className={`w-4/5 ${
+              open ? " text-primary-500" : ""
+            } ${triggerClassName}`}
           >
             {trigger}
           </h4>
           {icon === "chevron" ? (
             <ChevronTop
               className={`w-4 h-4 ${
-                open ? "rotate-180" : "rotate-0"
+                open ? "rotate-180 text-primary-500" : "rotate-0"
               } duration-300`}
             />
           ) : open ? (
-            <MinusIcon className={`w-4 h-4 lg:hidden`} />
+            <MinusIcon
+              className={`w-4 h-4 ${open ? "text-primary-500" : ""} ${
+                togglerButton ? "lg:hidden" : ""
+              }`}
+            />
           ) : (
-            <PlusIcon className={`w-4 h-4 lg:hidden`} />
+            <PlusIcon
+              className={`w-4 h-4 ${open ? "text-primary-500" : ""} ${
+                togglerButton ? "lg:hidden" : ""
+              }`}
+            />
           )}
         </header>
         <div
@@ -99,7 +111,10 @@ export const AccordionItem: FC<AccordionItemProps> = ({
             height: open ? boxHeight.current?.offsetHeight || 0 : minHeight,
           }}
         >
-          <div className="flex flex-col gap-1 px-3 pb-3" ref={boxHeight}>
+          <div
+            className={`flex flex-col gap-1 pb-3 ${contentClassName || "px-3"}`}
+            ref={boxHeight}
+          >
             {children}
             {togglerButton && (
               <button

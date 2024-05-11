@@ -13,6 +13,7 @@ const Router: FC = () => {
         <Route index element={<HomePage />} />
         <Route path="/women-skincare" element={<WomenSkincarePage />} />
         <Route path="/women-skincare/:slug" element={<ProductDetailPage />} />
+        <Route path="/products/:slug" element={<ProductDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

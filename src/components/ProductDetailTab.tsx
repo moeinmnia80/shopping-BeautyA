@@ -29,15 +29,16 @@ const productDetailParts: productDetailPartsType[] = [
 ];
 
 const ProductDetailTab: FC<ProductDetailTabProps> = ({ data }) => {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(window.innerWidth < 768 ? true : false);
   tabChangeHandler();
+
   useEffect(() => {
     const checkWindowWidth = () => {
       window.innerWidth < 768 ? setStatus(true) : setStatus(false);
     };
     window.addEventListener("resize", checkWindowWidth);
     return () => window.removeEventListener("resize", checkWindowWidth);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <>
@@ -70,7 +71,7 @@ const ProductDetailTab: FC<ProductDetailTabProps> = ({ data }) => {
                 minHeight={status ? 0 : "3rem"}
                 trigger={item.title}
                 triggerClassName={`text__lg font-bold`}
-                className={`relative flex flex-col gap-2 border-b-1 border-Gray-DFDFDF px-8 pt-4 ${
+                className={`relative flex flex-col gap-2 border-b-1 border-Gray-DFDFDF px-2.5 pt-4 ${
                   status ? "" : "pb-14"
                 }`}
                 togglerButton={!status}

@@ -200,6 +200,17 @@
     height: 100%;
   }
 }
+
+.product-detail-banner__swiper .swiper-pagination {
+  margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .product-detail-banner__swiper .swiper-pagination {
+    height: 0;
+    margin: 0;
+    overflow-y: hidden;
+  }
+}
 /*! tabbar product detail page */
 .active-tab {
   color: #a10550;
