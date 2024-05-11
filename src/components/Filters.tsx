@@ -77,6 +77,7 @@ const Filters: FC = () => {
               key={accordion.id}
               value={accordion.id}
               trigger={accordion.title}
+              togglerButton={false}
               className={`flex flex-col bg-white border-b-1 border-Gray-DFDFDF`}
             >
               {menuItems[accordion.id].map((item) => (

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { tabChangeHandler } from "@utils/helper";
 import { ProductDetailType } from "src/types/Products";
@@ -29,7 +29,15 @@ const productDetailParts: productDetailPartsType[] = [
 ];
 
 const ProductDetailTab: FC<ProductDetailTabProps> = ({ data }) => {
+  const [status, setStatus] = useState(false);
   tabChangeHandler();
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      window.innerWidth < 768 ? setStatus(true) : setStatus(false);
+    };
+    window.addEventListener("resize", checkWindowWidth);
+    return () => window.removeEventListener("resize", checkWindowWidth);
+  }, [window.innerWidth]);
 
   return (
     <>
@@ -38,17 +46,16 @@ const ProductDetailTab: FC<ProductDetailTabProps> = ({ data }) => {
           className={`relative flex justify-between gap-10 w-full font-bold border-b-1 
           border-Gray-606060 py-2 mt-5 overflow-x-scroll overflow-y-hidden`}
         >
-          <li className={`tab-btn cursor-pointer active-tab`}>
-            Product Details
-          </li>
-          <li className={`tab-btn w-max cursor-pointer`}>How To Apply</li>
-          <li className={`tab-btn w-max cursor-pointer`}>Ingredient</li>
-          <li className={`tab-btn w-max cursor-pointer`}>
-            What Makes In Advance
-          </li>
-          <li className={`tab-btn w-max cursor-pointer`}>
-            Product Specification
-          </li>
+          {productDetailParts.map((item) => (
+            <li
+              key={item.id}
+              className={`tab-btn w-max cursor-pointer ${
+                item.id === "details" ? "active-tab" : ""
+              }`}
+            >
+              {item.title}
+            </li>
+          ))}
           <div
             className={`tab-line absolute bottom-0 translate-y-[1px] left-0 w-[112px] h-[2px] bg-primary-500 duration-500`}
           />
@@ -60,10 +67,13 @@ const ProductDetailTab: FC<ProductDetailTabProps> = ({ data }) => {
                 icon="plus"
                 key={item.id}
                 value={item.id}
-                minHeight={"3rem"}
+                minHeight={status ? 0 : "3rem"}
                 trigger={item.title}
-                triggerClassName={`text__lg text-primary-500 font-bold`}
-                className="relative flex flex-col gap-2 border-b-1 border-Gray-DFDFDF px-8 pt-4 pb-14"
+                triggerClassName={`text__lg font-bold`}
+                className={`relative flex flex-col gap-2 border-b-1 border-Gray-DFDFDF px-8 pt-4 ${
+                  status ? "" : "pb-14"
+                }`}
+                togglerButton={!status}
               >
                 <div
                   dangerouslySetInnerHTML={{

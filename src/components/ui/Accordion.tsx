@@ -44,6 +44,7 @@ type AccordionItemProps = {
   triggerClassName?: string;
   minHeight: 0 | "1rem" | "2rem" | "3rem" | "5rem" | "7.5rem" | "10rem";
   icon: "chevron" | "plus";
+  togglerButton: boolean;
 } & ComponentProps<"li">;
 
 export const AccordionItem: FC<AccordionItemProps> = ({
@@ -53,6 +54,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   triggerClassName,
   minHeight,
   icon,
+  togglerButton,
   ...props
 }) => {
   const { selected, setSelected } = useContext(AccordionContext);
@@ -74,7 +76,11 @@ export const AccordionItem: FC<AccordionItemProps> = ({
           onClick={() => clickHandler()}
           className="flex items-center justify-between capitalize text-sm font-bold p-3"
         >
-          <h4 className={triggerClassName}>{trigger}</h4>
+          <h4
+            className={`${open ? " text-primary-500" : ""} ${triggerClassName}`}
+          >
+            {trigger}
+          </h4>
           {icon === "chevron" ? (
             <ChevronTop
               className={`w-4 h-4 ${
@@ -95,7 +101,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
         >
           <div className="flex flex-col gap-1 px-3 pb-3" ref={boxHeight}>
             {children}
-            {icon === "plus" && (
+            {togglerButton && (
               <button
                 className="absolute left-11 bottom-4 flex items-center gap-2 capitalize text-xs text-primary-500"
                 onClick={clickHandler}
