@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@apollo/client";
 
 import { GET_SKINCARE_PRODUCTS } from "@graphql/queries";
@@ -7,7 +8,6 @@ import SkincareProducts from "@components/SkincareProducts";
 import Breadcrumb, { BreadcrumbItem } from "@components/ui/Breadcrumb";
 
 import ProductsType from "src/types/Products";
-import { useState } from "react";
 import { hideOverflow } from "@utils/helper";
 
 const WomenSkincarePage = () => {

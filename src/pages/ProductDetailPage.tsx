@@ -1,17 +1,19 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
+import PlayIcon from "@assets/icons/PlayIcon";
+import productVideo from "@assets/images/productVideo.png";
+
 import { ProductDetailType } from "src/types/Products";
 import { GET_SKINCARE_PRODUCT } from "@graphql/queries";
 import ProductDetailFAQ from "@components/ProductDetailFAQ";
 import ProductDetailTab from "@components/ProductDetailTab";
 import ProductDetailInfo from "@components/ProductDetailInfo";
+import ProductDetailLike from "@components/ProductDetailLike";
 import ProductDetailSwiper from "@components/ProductDetailSwiper";
 import ProductDetailBanner from "@components/ProductDetailBanner";
 import Breadcrumb, { BreadcrumbItem } from "@components/ui/Breadcrumb";
 import ProductDetailRecommanded from "@components/ProductDetailRecommanded";
-import productVideo from "@assets/images/productVideo.png";
-import PlayIcon from "@assets/icons/PlayIcon";
 
 const ProductDetailPage = () => {
   const { slug } = useParams();
@@ -59,7 +61,7 @@ const ProductDetailPage = () => {
           strokeWidth={1}
         />
       </div>
-      {/* <ProductDetailRecommanded /> */}
+      <ProductDetailLike />
     </>
   );
 };

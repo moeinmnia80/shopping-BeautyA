@@ -7,6 +7,8 @@ import GiftIcon from "@assets/icons/GiftIcon";
 import ChatIcon from "@assets/icons/ChatIcon";
 import LocationIcon from "@assets/icons/LocationIcon";
 import { ProductDetailType } from "src/types/Products";
+import BranchModal from "./BranchModal";
+import { hideOverflow } from "@utils/helper";
 
 type ProductDetailInfoProps = {
   data?: {
@@ -23,11 +25,14 @@ const size = [
 ];
 
 const ProductDetailInfo: FC<ProductDetailInfoProps> = ({ data, loading }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [whichItem, setWhichItem] = useState<{
     id: number;
     size: string;
     price: string;
   }>(size[0]);
+
+  hideOverflow(isOpen);
 
   return (
     <>
@@ -54,7 +59,7 @@ const ProductDetailInfo: FC<ProductDetailInfoProps> = ({ data, loading }) => {
         label=""
         labelClassName="flex flex-col w-full lg:col-start-3 lg:col-end-5"
         className={`relative flex items-center w-full h-full text__md py-3 px-2
-      text-Gray-606060 bg-transparent border-b-1 border-Gray-606060 outline-none`}
+      text-Gray-606060 bg-transparent border-b-1 border-Gray-606060 outline-none cursor-pointer`}
         value={
           <div className="flex justify-between items-center w-full pr-8">
             <span>{whichItem.size}</span>
@@ -77,6 +82,7 @@ const ProductDetailInfo: FC<ProductDetailInfoProps> = ({ data, loading }) => {
       <button
         className={`fixed bottom-0 left-0 right-0 md:relative flex items-center justify-center w-full  text__md
       text-white bg-primary-500 py-3 capitalize lg:col-start-3 lg:col-end-5 z-40`}
+        onClick={() => setIsOpen((prev) => !prev)}
       >
         <LocationIcon className="w-6 h-6 mr-2" />
         <p className="mt-1">check in branches stock</p>
@@ -95,6 +101,7 @@ const ProductDetailInfo: FC<ProductDetailInfoProps> = ({ data, loading }) => {
           <p>receive free 1-2-1 expert advice in branches</p>
         </span>
       </div>
+      {isOpen && <BranchModal setIsOpen={setIsOpen} />}
     </>
   );
 };
