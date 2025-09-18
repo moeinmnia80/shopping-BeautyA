@@ -23,7 +23,7 @@ const AccordionContext = createContext({} as AccordionContextType);
 
 type AccordionProps = ComponentProps<"ul">;
 
-const Accordion: FC<AccordionProps> = ({ children, onChange, ...props }) => {
+const Accordion: FC<AccordionProps> = ({ children, ...props }) => {
   const [selected, setSelected] = useState<string[]>([]);
 
   useEffect(() => {}, [selected]);
